@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 You need to have python 3 installed. That's it!
 
-### Installing
+### Installation
 
 Follow the below steps : 
 
