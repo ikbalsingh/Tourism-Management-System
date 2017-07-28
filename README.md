@@ -7,7 +7,7 @@ This web development project was built as a part of the courses, **Web Technolog
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 ### Prerequisites
 
-You need to have python 3.5 installed.That's it!
+You need to have python 3 installed.That's it!
 
 ### Installing
 
