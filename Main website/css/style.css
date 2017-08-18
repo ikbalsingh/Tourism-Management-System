@@ -1,0 +1,38 @@
+
+
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-image: url(../images/mainpage.jpg);
+ 
+  }
+
+  #main {
+    flex: 1 0 auto;
+    height: 91vh;
+  }
+
+.heading{
+	font-size: 5em;
+font-family: 'Raleway', sans-serif;
+	
+}
+
+.subheading{
+font-size: 1.1em;
+}
+
+.maincontent{
+	text-shadow: 1px 1px #263238;
+	color:#f5f5f5;
+text-align: center;
+margin-top: 15%;
+
+}
+
+.brand-logo{
+		font-size: 1.9em !important;
+
+}
