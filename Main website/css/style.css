@@ -1,21 +1,22 @@
 
-
-
 body {
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
     background-image: url(../images/mainpage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
  
   }
 
   #main {
     flex: 1 0 auto;
-    height: 91vh;
+    height: 80vh;
+
   }
 
 .heading{
-	font-size: 5em;
+	font-size: 4.3em;
 font-family: 'Raleway', sans-serif;
 	
 }
@@ -33,6 +34,6 @@ margin-top: 15%;
 }
 
 .brand-logo{
-		font-size: 1.9em !important;
+		font-size: 1.7em !important;
 
 }
