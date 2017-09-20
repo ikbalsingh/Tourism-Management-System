@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
@@ -30,15 +30,20 @@ def register(request):
             user = None
         print(user)
         if user is not None:
+            hash = hashlib.sha1()
+            temp = email + 'hahaha'
+            hash.update(temp.encode('utf-8'))
+            tp = hash.hexdigest()
+            print(tp)   
             user_profile = Profile.objects.create(
-                user=user, email=email, profile_pic=photo)
+                user=user, email=email, profile_pic=photo,confirmhash = tp)
             print(user_profile)
             return HttpResponseRedirect('/authen/login/')
         else:
             return HttpResponse('Some Probem occured')
     else:
         if request.user.is_authenticated():
-            return HttpResponseRedirect('/authen/dashboard')
+            return HttpResponseRedirect('/dashboard')
         else:
             return render(request, 'signup.html')
 
@@ -50,22 +55,14 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return HttpResponseRedirect('/authen/dashboard/')
+            return HttpResponseRedirect('/dashboard/')
         else:
             return HttpResponse('You havent registered')
     else:
         if request.user.is_authenticated():
-            return HttpResponseRedirect('/authen/dashboard')
+            return HttpResponseRedirect('/dashboard')
         else:
             return render(request, 'login.html')
-
-
-def dashboard(request):
-    if request.user.is_authenticated():
-        print(request.user)
-        return HttpResponse('you are logged in ' + request.user.username)
-    else:
-        return HttpResponse('Please login first')
 
 
 def logout(request):
@@ -84,8 +81,7 @@ def forgotpassword(request):
         if user_profile is not None:
 
             hash = hashlib.sha1()
-            now = datetime.datetime.now()
-            temp = str(now) + email + 'hahaha'
+            temp = email + 'hahaha'
             hash.update(temp.encode('utf-8'))
             tp = hash.hexdigest()
             print(tp)
@@ -97,8 +93,8 @@ def forgotpassword(request):
                 scheme, domain, tp)
 
             # Gmail Sign In
-            gmail_sender = "thecoders97@gmail.com"
-            gmail_passwd = "valorlabs2k17"
+            gmail_sender = "thecoders000@gmail.com"
+            gmail_passwd = "12345ikbal"
 
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.ehlo()
@@ -125,13 +121,36 @@ def forgotpassword(request):
 
     else:
         if request.user.is_authenticated():
-            return HttpResponseRedirect('/authen/dashboard')
+            return HttpResponseRedirect('/dashboard')
         else:
             return render(request, 'forgotpass.html')
 
 
 def resetpassword(request, p):
-    print(p)
-    up = Profile.objects.get(email=p)
-    print(up)
-    return HttpResponse(p)
+    # print(p)
+    # up = Profile.objects.get(confirmhash = p)
+    # print(up)
+    # return HttpResponse(up)
+    if request.method=='POST':
+            print(p)
+            upass=request.POST.get('upass')
+            upass1=request.POST.get('upass1')
+            print(upass,upass1)
+            if upass==upass1:
+                up=Profile.objects.get(confirmhash=p)
+                print("user",up.user)
+                user = up.user
+                a = user.set_password(upass)
+                print(a)
+                user.save()
+                print('hhhhhhh')
+                return redirect('/authen/login/')
+
+            else:
+                return HttpResponse('Enter password correctly')
+
+    else:
+        up=Profile.objects.get(confirmhash = p)
+        print(up)
+        return render(request,'resetpass.html',{ 'user':up })
+        

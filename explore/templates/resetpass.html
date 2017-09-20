@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html>
-{% load static %}
 
 <head>
     <meta charset="UTF-8">
     <title>Material Login Form</title>
 
     <!--Import Google Icon Font-->
-    <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" media="screen,projection" />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="css/style.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/footer-distributed-with-address-and-phones.css' %}">
+    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+
 
 
     <!-- 
@@ -29,8 +29,8 @@
   <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
    -->
-   <link rel="stylesheet" href="{%  static 'css/signup.css' %}">
-   
+    <link rel="stylesheet" href="css/signup.css">
+
 </head>
 
 
@@ -71,15 +71,14 @@
         <div class="card" style="margin : -10px 0"></div>
         <div class="card">
             <h1 class="title">Reset Password</h1>
-            <form method="POST">
-                {% csrf_token %}
+            <form>
                 <div class="input-container">
-                    <input type="password" id="#{label}" required="required" name="upass" />
+                    <input type="#{type}" id="#{label}" required="required" />
                     <label for="#{label}">New Password</label>
                     <div class="bar"></div>
                 </div>
                 <div class="input-container">
-                    <input type="password" id="#{label}" required="required" name="upass1" />
+                    <input type="#{type}" id="#{label}" required="required" />
                     <label for="#{label}">Confirm New Password</label>
                     <div class="bar"></div>
                 </div>
@@ -152,9 +151,9 @@
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
-    <script src="{% static 'js/signup.js' %}"></script>
-    <script src="{% static 'js/index.js' %}"></script>
-  </body>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="js/signup.js"></script>
+    <script src="js/index.js"></script>
+</body>
 
 </html>

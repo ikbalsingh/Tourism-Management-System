@@ -15,14 +15,10 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls import url, include
-from django.contrib import admin
+from . import views
 
-from django.conf.urls.static import static
-from . import settings
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('chatroom.urls')),
-    url(r'^authen/', include('authen.urls')),
-    url(r'^dashboard/', include('explore.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'place/(?P<p>[\w\-\_\ \,]+)/$',views.place),
+    url(r'home/$', views.dashboard_home),
+]
