@@ -18,11 +18,16 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from django.conf.urls.static import static
-from . import settings
+from . import settings,views
+
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('chatroom.urls')),
     url(r'^authen/', include('authen.urls')),
     url(r'^dashboard/', include('explore.urls')),
+    url(r'^faq/',views.faq ),
+    url(r'^about/', views.about),
+    url(r'^contact/',views.contact),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
