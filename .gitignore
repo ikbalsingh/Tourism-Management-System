@@ -105,3 +105,6 @@ ENV/
 #Extra
 .vscode
 db.sqlite3
+
+#Migrations
+migrations
