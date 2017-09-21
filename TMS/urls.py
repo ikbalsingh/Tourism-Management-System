@@ -24,7 +24,7 @@ from . import settings,views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('chatroom.urls')),
+    url(r'^chat/', include('chatroom.urls')),
     url(r'^authen/', include('authen.urls')),
     url(r'^dashboard/', include('explore.urls')),
     url(r'^faq/',views.faq ),

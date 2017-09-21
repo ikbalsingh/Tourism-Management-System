@@ -108,3 +108,6 @@ db.sqlite3
 
 #Migrations
 migrations
+
+
+node_modules
