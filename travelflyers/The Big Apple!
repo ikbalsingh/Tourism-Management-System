@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from davidtrushkov.com/travel/travelflyers/The Big Apple! by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Sep 2017 15:08:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>Travel Share</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name=description content="Share and explore travel destinations around the world with others" />
+    <meta name="keywords" content="Travel, Share, travelshare, explore, destinations, users, discover, places, connect, world, flyers, travelflyers" />
+    <meta name="author" content="David Trushkov" />
+    <link rel="shortcut icon" href="../src/public/css/Travel-Share-Icon.png" />
+
+    <!-- Fonts -->
+    <link href="../../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    <link rel="prefetch stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600">
+
+    <link rel="stylesheet" href="../src/public/css/libs/bootstrap.css">
+    <link rel="stylesheet" href="../src/public/css/libs/sweetalert.css">
+    <link rel="stylesheet" href="../src/public/css/app.css">
+    <link rel="stylesheet" href="../src/public/css/navigation.css">
+    <link rel="stylesheet" href="../src/public/css/libs/typeahead.css">
+    <link rel="stylesheet" type="text/css" href="../src/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../../cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.css">
+
+
+    <!-- Lity lightbox files -->
+    <link rel="stylesheet" href="../src/public/css/lity.css">
+
+</head>
+
+
+<body>
+
+        
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://davidtrushkov.com/travel">Travel Share</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="http://davidtrushkov.com/travel" class="page-scroll">Home</a></li>
+                    <li><a href="../travelflyers" class="page-scroll">Travel Flyers</a></li>
+                    <li><a href="../login.html" class="page-scroll"> <i class="inverted blue world icon big"></i></a></li>
+                    <li><a href="../leaderboards/index.html" class="page-scroll"><i class="fa fa-diamond"></i></a></li>
+                    <li><a href="../login.html" class="page-scroll">Login</a></li>
+                    <li><a href="../register.html" class="page-scroll">Register</a></li>
+                            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<br><br><br><br><br>
+
+    <div class="container" style="background-color: #fafafa;">
+
+        <div class="col-md-12">
+
+            <div class="img-wrap-flyer">
+            <form method="post" action="http://davidtrushkov.com/travel/photo/1" enctype="multipart/form-data">
+                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                <input type="hidden" name="_method" value="DELETE">
+                                <img src="../src/public/FlyerBanner/photos/tn-6d4d7e8981003974d98f0cc20bbf3cca2f0364b4.jpg" alt="hydrogen" data-id="1" id="Banner-image" class="test">
+            </form>
+        </div>
+
+
+
+
+
+            <br>
+
+            <div class="col-md-12">
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                                            <a href="../profile/1.html" class="avatar">
+                            <img class="ui avatar image" src="../src/public/ProfilePhotos/photos/tn-405e638c2a6704328684dc5b1ee4eb9d08566b86.jpg" alt="hydrogen's Profile Picture">
+                        </a>
+                                            <a href="../profile/1.html">
+                            <span id="Flyer-Username">hydrogen</span>
+                        </a>
+                </div>
+                <div class="col-xs-6 col-sm-4 col-md-3">
+                                                <a href="../flyer/10/like" id="thumbs-like-popup">
+                                <i class="thumbs outline up icon large"></i> 0
+                            </a>
+                            <div id="popup1" class="ui custom basic popup">
+                                Like Travel Flyer
+                            </div>
+                                    </div>
+            </div>
+
+            <br><br>
+
+            <p class="text-center" id="Flyer-Title">The Big Apple!</p>
+            <p class="text-center" id="Flyer-Sub-Description"><i class="marker icon"></i><span id="Flyer-Sub">New York, NY, United States</span></p>
+            <p class="text-center"><i>Discovering the Big Apple!</i></p>
+
+            <div id="Flyer-Description">
+                A wonderful experience to finally be able to visit THE New York everybody knows from the movies. Went there with my girlfriend for some days.
+            </div>
+
+
+            <div class="col-md-12 gallery">
+                                    <div class="row">
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/1">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/1da2c6a6876a6fa72fd84c996fd19bb6671511da.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-1da2c6a6876a6fa72fd84c996fd19bb6671511da.jpg" alt="" data-id="1">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/2">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/e34af0941c11433b3b87ab42228a9f42dfc34bdc.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-e34af0941c11433b3b87ab42228a9f42dfc34bdc.jpg" alt="" data-id="2">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/3">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/2413d1c6f5968bc2b42dda1a755b89fb5b57854e.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-2413d1c6f5968bc2b42dda1a755b89fb5b57854e.jpg" alt="" data-id="3">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/4">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/ea738aa6264c83eb603885e93624be1d9d716da9.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-ea738aa6264c83eb603885e93624be1d9d716da9.jpg" alt="" data-id="4">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                            </div>
+                                    <div class="row">
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/5">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/6ee3d753872c2854a88983718cb7ff59234a2f65.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-6ee3d753872c2854a88983718cb7ff59234a2f65.jpg" alt="" data-id="5">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/6">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/5fe9b799728465d58d9f5940cf87a2023d6001c6.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-5fe9b799728465d58d9f5940cf87a2023d6001c6.jpg" alt="" data-id="6">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/7">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/05f1e2f956129891ff5f229042b5604ee11ba3b6.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-05f1e2f956129891ff5f229042b5604ee11ba3b6.jpg" alt="" data-id="7">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/8">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/e53d9245a2b284ebcab6581a828a8cc2441a8728.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-e53d9245a2b284ebcab6581a828a8cc2441a8728.jpg" alt="" data-id="8">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                            </div>
+                                    <div class="row">
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/9">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/8866f510b9be9296b21099b98d50fb5eff5a231e.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-8866f510b9be9296b21099b98d50fb5eff5a231e.jpg" alt="" data-id="9">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/10">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/d7f60ab7fcc9449c24e33aa61b7d534d3729168d.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-d7f60ab7fcc9449c24e33aa61b7d534d3729168d.jpg" alt="" data-id="10">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                                <div class="img-wrap">
+                                    <form method="post" action="http://davidtrushkov.com/travel/photos/11">
+                                        <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                                                                <a href="../src/public/FlyerPhotos/photos/c02e6eb30e89f69381711f1347bfae97fd897166.jpg" data-lity>
+                                            <img src="../src/public/FlyerPhotos/photos/th-c02e6eb30e89f69381711f1347bfae97fd897166.jpg" alt="" data-id="11">
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                                            </div>
+                            </div>
+
+        </div>  <!-- close clo-md-12 -->
+
+        <br>
+
+        
+        <div class="col-md-12">
+            <br><br>
+            <div id="map"></div>
+            <br><br>
+            <a href="../travelflyers"><button class="ui inverted green button">All Travel Flyers</button></a>
+            <br><br><hr>
+        </div>
+
+        <div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '../../../changvillagecomtravel.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<script id="dsq-count-scr" src="../../../changvillagecomtravel.disqus.com/count.js" async></script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    </div>  <!-- close container -->
+
+
+
+<!-- JavaScripts -->
+<script src="../src/public/js/libs/jquery.js"></script>
+<script type="text/javascript" src=../src/public/js/libs/bootstrap.js></script>
+<script src="../src/public/js/libs/sweetalert.js"></script>
+<script src="../src/public/js/libs/FitText.js"></script>
+<script src="../src/semantic/dist/semantic.min.js"></script>
+<script src="../src/public/js/main.js"></script>
+
+<footer class="footer-basic-centered">
+
+    <p class="footer-company-motto">Connect with users and explore places</p>
+
+    <p class="footer-links">
+        <a href="http://davidtrushkov.com/travel">Home</a> |
+
+        <a href="../travelflyers">Travel Flyers</a>
+    </p>
+
+    <p class="footer-company-name">Travel Share &copy; 2015</p>
+
+</footer>
+
+
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.js"></script>
+    <script type="application/javascript" src="../src/public/js/dropzone.forms.js"></script>
+    <script type="application/javascript" src="../src/public/js/dropzone.flyer.js"></script>
+    <script type="application/javascript" src="../src/public/js/lity.js"></script>
+
+    <!--This uses FitText.js to resize the letters when on Mobile platforms.
+        This is particularly used for the Flyers Description area. -->
+    <script>jQuery("#Flyer-Description").fitText(1.6, {minFontSize: '10px', maxFontSize: '18px'});</script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaB_9hgeARViVKIT6O1pFKXRCSuYaol2A&amp;libraries=places&amp;callback=initAutocomplete"></script>
+
+    <script>
+        function initAutocomplete() {
+
+            var lat = 40.7127837000;
+            var lng = -74.0059413000;
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {
+                    lat: lat,
+                    lng: lng
+                },
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var marker = new google.maps.Marker({
+                position: {
+                    lat: lat,
+                    lng: lng
+                },
+                map: map,
+                animation: google.maps.Animation.DROP
+            });
+        }
+    </script>
+
+</body>
+
+<!-- Mirrored from davidtrushkov.com/travel/travelflyers/The Big Apple! by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Sep 2017 15:09:22 GMT -->
+</html>
