@@ -19,6 +19,6 @@ from . import views
 
 
 urlpatterns = [
-    url(r'place/(?P<p>[\w\-\_\ \,]+)/$',views.place),
+    url(r'place/(?P<p>[\w\-\_\ \,\.]+)/$',views.place),
     url(r'home/$', views.dashboard_home),
 ]
