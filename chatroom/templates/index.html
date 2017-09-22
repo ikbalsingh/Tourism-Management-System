@@ -1,54 +1,36 @@
-<!DOCTYPE html>
-<html lang="en" debug="true">
-    {% load static %}
-    <head>
-    
-        <!-- <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script> -->
-        
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    
-        
-        <title>Spika v2</title>
-    
-        <!-- Scripts --> 
-    
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <![endif]-->
-        
-        <link href="{% static 'css/stylechat.css' %}" rel="stylesheet">
-        
-    </head>
-  
-    <body>
-        
-        <div id="spika-container">
+{% extends "navbar.html" %} 
+{% load static %}
+ {% block content %}
+ <link type="text/css" rel="stylesheet" href="{% static 'authen/css/materialize.min.css' %}" media="screen,projection" />
 
-            <div id="initial-screen" style="position:absolute;width:100%;text-align:center;top:45%">
-                Loading Spika... <br />
-                <img src="{% static 'img/loader.gif' %}" />
-            </div>
-        
-        </div>
-        
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->     
-    
-    <script  type="text/javascript">
-        
-        document.getElementById("initial-screen").style.height = document.documentElement.clientHeight + "px";
-        
-    </script>
-    
-    </body>
-    
-    <script type="text/javascript" src="{% static 'js/bundle.js' %}"></script>
-    
+<link rel="stylesheet" href="{% static 'authen/css/style.css' %}">
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{% static 'authen/css/font-awesome.min.css' %}">
 
-</html>
+<link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+<!-- <link rel="stylesheet" href="{%  static 'authen/css/signup.css' %}"> -->
 
 
+<link href="{% static 'chat/css/stylechat.css' %}" rel="stylesheet">
+<div id="spika-container">
+    <div id="initial-screen" style="position:absolute;width:100%;text-align:center;top:45%">
+        Loading Spika... <br />
+        <img src="{% static 'img/loader.gif' %}" />
+    </div>
+</div>
+<script type="text/javascript">
+    document.getElementById("initial-screen").style.height = document.documentElement.clientHeight + "px";
+</script>
+<script type="text/javascript" src="{% static 'chat/js/bundle.js' %}"></script>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
+<script src="{% static 'authen/js/signup.js' %}"></script>
+<script src="{% static 'authen/js/index.js' %}"></script>
+{% endblock content %}

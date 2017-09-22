@@ -9,8 +9,6 @@
 
 /* Rerun */
 
-
-
 /* Container */
 .custom-container {
   position: relative;
@@ -363,4 +361,8 @@
     bottom: 30px;
     opacity: 0;
   }
+}
+
+body{
+  background : #717e86;
 }

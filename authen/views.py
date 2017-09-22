@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
@@ -10,9 +10,7 @@ import hashlib
 import datetime
 import smtplib
 
-
 # Create your views here.
-
 
 def register(request):
     if request.method == 'POST':
@@ -34,9 +32,9 @@ def register(request):
             temp = email + 'hahaha'
             hash.update(temp.encode('utf-8'))
             tp = hash.hexdigest()
-            print(tp)   
+            print(tp)
             user_profile = Profile.objects.create(
-                user=user, email=email, profile_pic=photo,confirmhash = tp)
+                user=user, email=email, profile_pic=photo, confirmhash=tp)
             print(user_profile)
             return HttpResponseRedirect('/authen/login/')
         else:
@@ -45,8 +43,7 @@ def register(request):
         if request.user.is_authenticated():
             return HttpResponseRedirect('/dashboard')
         else:
-            return render(request, 'signup.html')
-
+            return render(request, 'signup.html',{"profile" : None})
 
 def login(request):
     if request.method == 'POST':
@@ -55,22 +52,22 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return HttpResponseRedirect('/dashboard/')
+            return HttpResponseRedirect('/dashboard/home')
         else:
             return HttpResponse('You havent registered')
     else:
         if request.user.is_authenticated():
             return HttpResponseRedirect('/dashboard')
         else:
-            return render(request, 'login.html')
-
+            return render(request, 'login.html',{"profile" : None})
 
 def logout(request):
     if request.user.is_authenticated():
         auth_logout(request)
-        return HttpResponse('Succesfully logged out')
+        return redirect('/authen/login/')
     else:
-        return HttpResponse('Please login first')
+        return redirect('/authen/login/')
+
 
 
 def forgotpassword(request):
@@ -123,34 +120,43 @@ def forgotpassword(request):
         if request.user.is_authenticated():
             return HttpResponseRedirect('/dashboard')
         else:
-            return render(request, 'forgotpass.html')
-
+            return render(request, 'forgotpass.html',{"profile" : None })
 
 def resetpassword(request, p):
     # print(p)
     # up = Profile.objects.get(confirmhash = p)
     # print(up)
     # return HttpResponse(up)
-    if request.method=='POST':
-            print(p)
-            upass=request.POST.get('upass')
-            upass1=request.POST.get('upass1')
-            print(upass,upass1)
-            if upass==upass1:
-                up=Profile.objects.get(confirmhash=p)
-                print("user",up.user)
-                user = up.user
-                a = user.set_password(upass)
-                print(a)
-                user.save()
-                print('hhhhhhh')
-                return redirect('/authen/login/')
+    if request.method == 'POST':
+        print(p)
+        upass = request.POST.get('upass')
+        upass1 = request.POST.get('upass1')
+        print(upass, upass1)
+        if upass == upass1:
+            up = Profile.objects.get(confirmhash=p)
+            print("user", up.user)
+            user = up.user
+            a = user.set_password(upass)
+            print(a)
+            user.save()
+            print('hhhhhhh')
+            return redirect('/authen/login/')
 
-            else:
-                return HttpResponse('Enter password correctly')
+        else:
+            return HttpResponse('Enter password correctly')
 
     else:
-        up=Profile.objects.get(confirmhash = p)
+        up = Profile.objects.get(confirmhash=p)
         print(up)
-        return render(request,'resetpass.html',{ 'user':up })
-        
+        return render(request, 'resetpass.html', {'user': up , "profile" : None})
+
+def viewprofile(request, p=None):
+    if request.user.is_authenticated():
+        if p is not None:
+            user = User.objects.get(username=p)
+            pr = Profile.objects.get(user=user)
+        else:
+            pr = Profile.objects.get(user=request.user)
+        return render(request, 'profile.html', {"profile": pr})
+    else:
+        return redirect('/authen/login/')
