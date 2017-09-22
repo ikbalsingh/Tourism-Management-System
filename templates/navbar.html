@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <title>Travel Share</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name=description content="Share and explore travel destinations around the world with others" />
+    <meta name="keywords" content="Travel, Share, travelshare, explore, destinations, users, discover, places, connect, world, flyers, travelflyers"
+    />
+    <meta name="author" content="David Trushkov" />
+    <link rel="shortcut icon" href="{% static 'src/public/css/Travel-Share-Icon.png' %}" />
+
+    <!-- Fonts -->
+    <link href="../../../cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    <link rel="prefetch stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600">
+
+    <link rel="stylesheet" href="{% static 'src/public/css/libs/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/libs/sweetalert.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'src/public/css/libs/typeahead.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'src/semantic/dist/semantic.min.css' %}">
+    <link rel="stylesheet" href="../../../cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.css">
+
+    <!-- Lity lightbox files -->
+    <link rel="stylesheet" href="{% static 'src/public/css/lity.css' %}">
+
+    <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'profile/css/materialize.min.css' %}" media="screen,projection" />
+    <link rel="stylesheet" href="{% static 'profile/css/style.css' %}">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'profile/css/font-awesome.min.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'profile/css/footer-distributed-with-address-and-phones.css' %}">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'profile/css/footer-distributed-with-address-and-phones.css' %}">
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <nav class="nav-extended">
+        <div class="nav-wrapper blue-grey darken-3">
+            <div class="container">
+                <a href="index.html" class="brand-logo"><i class="large material-icons">landscape</i><span id="logo1">Travel</span><span id="logo2">Book</span></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="badges.html">FAQ</a></li>
+                    {% if profile  %}
+                    <li><a href="collapsible.html">{{profile.user.username}}</a></li>
+                        {% if profile.profile_pic %}
+                        <li id="profilepic"><a href="idontknowyet"><img style = " height : 30px" src="{{ profile.profile_pic.url }}"></a></li>
+                        {% endif %}
+                    <li><a href="/authen/logout">Log Out</a></li>                        
+                    {% else %}
+                        <li><a href="index.html">Log In</a></li>
+                        <li><a href="about-us.html">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+
+                <ul class="side-nav" id="mobile-demo">
+                    <li class="k"><a href="demo.html"><i class="material-icons">camera</i>About us</a></li>
+                    <li><a href="dark-theme.html"><i class="material-icons">brightness_3</i>Contact us</a></li>
+                    <li><a href="blog.html"><i class="material-icons">edit</i>FAQ</a></li>
+                    <li><a href="full-header.html"><i class="material-icons">fullscreen</i>Explore</a></li>
+                    {% if profile  %}
+                    <li><a href="collapsible.html">
+                            {% if profile.profile_pic %}
+                            <i class="material-icons">photo</i> 
+                            {% else %}
+                            <i class="material-icons">edit</i>                            
+                            {% endif %}
+                        {{profile.user.username}}
+                    </a></li>
+                    {% else %}
+                    <li><a href="horizontal.html"><i class="material-icons">swap_horiz</i>Login</a></li>
+                    <li><a href="no-image.html"><i class="material-icons">texture</i>Sign-Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    {% block content %} {% endblock content %}
+
+    <!-- close container -->
+
+    <!-- JavaScripts -->
+
+    <script src="{% static 'src/public/js/libs/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static '/src/public/js/libs/bootstrap.js' %}"></script>
+    <script src="{% static 'src/public/js/libs/sweetalert.js' %}"></script>
+    <script src="{% static 'src/public/js/libs/FitText.js' %}"></script>
+    <script src="{% static 'src/semantic/dist/semantic.min.js' %}"></script>
+    <script src="{% static 'src/public/js/main.js' %}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'profile/js/materialize.min.js' %}"></script>
+    <script src="{% static 'profile/js/index.js' %}"></script>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>Travel<span>Book</span></h3>
+
+            <p class="footer-links">
+                <a href="index.html">Home</a> ·
+                <a href="about-us.html">About</a> ·
+                <a href="#">FAQ</a> ·
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Origin Incorporated &copy; 2017</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>S.V. Road</span> Mumbai, India</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">support@theorigin.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span> Origin Incorporated helps to make beautiful products to help people with creative
+                ideas succeed.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-github"></i></a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
