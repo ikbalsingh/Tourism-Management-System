@@ -72,10 +72,10 @@
                 <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             </div>
           
-            <p class="text-center" id="Flyer-Title">South Africa</p>
+            <p class="text-center" id="Flyer-Title"> {{flyer.title}}</p>
 
             <div class="text-center weathermain">
-                <div id="location"></div>
+                <div id="location">{{flyer.title}}</div>
                 <hr>
                 <div id="summary"></div>
                 <div id="sunrise"></div>
@@ -90,18 +90,12 @@
             </div>
             <br>
 
-            <div id="Flyer-Description">
-                South Africa is a country on the southernmost tip of the African continent, marked by several distinct ecosystems. Inland
-                safari destination Kruger National Park is populated by big game. The Western Cape offers beaches, lush winelands
-                around Stellenbosch and Paarl, craggy cliffs at the Cape of Good Hope, forest and lagoons along the Garden
-                Route, and the city of Cape Town, beneath flat-topped Table Mountain.
+            <div id="Flyer-Description" >
+                 {{flyer.description}}
             </div>
 
             <div class="text-center">
-                <div class="file-upload">
-                    <label for="upload" class="file-upload__label">Upload photo</label>
-                    <input id="upload" class="file-upload__input" type="file" name="file-upload">
-                </div>
+                Photos
             </div>
 
             <div class="col-md-12 gallery">
@@ -246,10 +240,7 @@
                 <hr><br>
             </div>
             <div class="text-center">
-                <div class="file-upload">
-                    <label for="upload" class="file-upload__label">Upload Video</label>
-                    <input id="upload" class="file-upload__input" type="file" name="file-upload">
-                </div>
+               Videos
             </div><br><br>
 
             <div class="col-md-12 gallery">
@@ -355,7 +346,20 @@
         </div>
 
         <div id="disqus_thread"></div>
+
+       
+
+ <script >
+     var loc= "{{flyer.location}}";
+      loc=loc.slice(1,loc.length-1 );
+        loc=loc.split(",");
+console.log(loc);
+ </script>
+
+
         <script>
+
+            
         /**
         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
@@ -387,7 +391,141 @@
     <script type="text/javascript" src="{% static 'src/public/js/libs/jquery.js' %}"></script>
     
     <script type="text/javascript" src="{% static 'explore/location/js/materialize.min.js' %}"></script>
-    <script src="{% static 'explore/location/js/weatherindex.js' %}"></script>
+    <script>
+        
+
+
+$(document).ready(function () {
+  $(".button-collapse").sideNav();
+   passLoocation(loc[0], loc[1]);
+  $('.materialboxed').materialbox();
+});
+
+var temperature, Tminimum, Tmaximum;
+
+function passLoocation(x, y) {
+console.log(x+y);
+  var location = x + ", " + y;
+  setCity(location);
+  apicall(x, y);
+}
+function setCity(latLon) {
+  var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + latLon + "&sensor=true";
+  url = url.replace(/\s/g, "");
+  $.ajax({
+    format: "json",
+    dataType: "json",
+    url: url,
+    success: function (data) {
+    
+    },
+  });
+}
+
+function apicall(lat, long) {
+  $.ajax({
+    url: 'https://api.darksky.net/forecast/c78c3d44fc4167f267b404d6d060f5b4/' + lat + ',' + long + '?exclude=minutely,hourly,alerts,flags&units=si',
+    dataType: 'jsonp',
+    success: function (response) {
+      var tmax = Math.round(response.daily.data[0].temperatureMax);
+      var tmin = Math.round(response.daily.data[0].temperatureMin);
+      $("#summary").html(response.daily.data[0].summary);
+      if (response.daily.data[0].sunriseTime && response.daily.data[0].sunsetTime) {
+
+        $("#sunrise").html("Sunrise " + timeConverter(response.daily.data[0].sunriseTime));
+        $("#sunset").html("Sunset " + timeConverter(response.daily.data[0].sunsetTime));
+      }
+
+      $("#maxTemp").html("<i class=\"fa fa-angle-up\" aria-hidden=\"true\"></i> " + tmax + "°C");
+      $("#minTemp").html("<i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i> " + tmin + "°C");
+      $("#temp").html(Math.round(response.currently.temperature) + "°C");
+      $("#windspeed").html("Wind " + response.currently.windSpeed + " m/s");
+
+      temperature = Math.round(response.currently.temperature);   //set value of global variables
+      Tminimum = tmin;
+      Tmaximum = tmax;
+
+      var icons = new Skycons({ "color": "white" });
+      switch (response.currently.icon) {
+        case "rain":
+          icons.set("weather", Skycons.RAIN);
+          icons.play();
+          break;
+        case "clear-day":
+          icons.set("weather", Skycons.CLEAR_DAY);
+          icons.play();
+          break;
+        case "clear-night":
+          icons.set("weather", Skycons.CLEAR_NIGHT);
+          icons.play();
+          break;
+        case "partly-cloudy-day":
+          icons.set("weather", Skycons.PARTLY_CLOUDY_DAY);
+          icons.play();
+          break;
+        case "partly-cloudy-night":
+          icons.set("weather", Skycons.PARTLY_CLOUDY_NIGHT);
+          icons.play();
+          break;
+        case "cloudy":
+          icons.set("weather", Skycons.CLOUDY);
+          icons.play();
+          break;
+        case "sleet":
+          icons.set("weather", Skycons.SLEET);
+          icons.play();
+          break;
+        case "snow":
+          icons.set("weather", Skycons.SNOW);
+          icons.play();
+          break;
+        case "wind":
+          icons.set("weather", Skycons.WIND);
+          icons.play();
+          break;
+        case "fog":
+          icons.set("weather", Skycons.FOG);
+          icons.play();
+          break;
+      }
+    }
+  });
+}
+
+function timeConverter(UNIX_timestamp) {
+  var a = new Date(UNIX_timestamp * 1000);
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var time = 'am';
+  if (hour > 12) {
+    time = 'pm';
+    hour = hour - 12;
+  }
+  if (min / 10 < 1)
+    min = '0' + min;
+  if (hour / 10 < 1)
+    hour = '0' + hour;
+  var time = hour + ':' + min + time;
+  return time;
+}
+ 
+
+           
+    function initAutocomplete() {
+       map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: parseFloat(loc[0]), lng: parseFloat(loc[1]) },
+        zoom: 13,
+        mapTypeId: 'roadmap'
+      });
+    var marker = new google.maps.Marker({
+    position: { lat: parseFloat(loc[0]), lng: parseFloat(loc[1])},
+    map: map,
+    title: 'Hello World!'
+  });
+}
+
+      
+    </script>
 
     <script src="../../../cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.js"></script>
     <script type="application/javascript" src="{% static 'src/public/js/dropzone.forms.js' %}"></script>
@@ -402,29 +540,8 @@
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaB_9hgeARViVKIT6O1pFKXRCSuYaol2A&amp;libraries=places&amp;callback=initAutocomplete"></script>
 
-    <script>
-        function initAutocomplete() {
 
-            var lat = -34.0590877549;
-            var lng = 18.5374815859;
+ 
 
-            var map = new google.maps.Map(document.getElementById('map'), {
-                center: {
-                    lat: lat,
-                    lng: lng
-                },
-                zoom: 10,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-
-            var marker = new google.maps.Marker({
-                position: {
-                    lat: lat,
-                    lng: lng
-                },
-                map: map,
-                animation: google.maps.Animation.DROP
-            });
-        }
-    </script>
+   
 {% endblock content %}
