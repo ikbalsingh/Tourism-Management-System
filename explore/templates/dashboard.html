@@ -286,6 +286,7 @@
 var marker;
 var resultflytitle=[];
     var flyeractive=0;
+     var markers = [];
     function flyer(){
 
    
@@ -340,12 +341,40 @@ var resultflytitle=[];
           title:flyertitle[i],
            clickable: true
         });
-     }
-   google.maps.event.addListener(mark, 'click', function () {
-           
-            window.location = '/dashboard/location/'+mark.title;
-          });
 
+       markers.push(mark);
+     }
+     console.log(markers);
+
+  
+  
+
+  google.maps.event.addListener(markers, "click", setlocation);
+
+
+  function  setlocation(){
+    console.log(444444);
+     window.location = '/dashboard/location/'+flyertitle[3];
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+for (var i = 0; i < markers.length; i++) {
+var marker = markers[i];
+google.maps.event.addListener(marker, 'click', function () {
+// where I have added .html to the marker object.
+ window.location = '/dashboard/location/'+this.title;
+});
+}
 
 
 
@@ -379,7 +408,7 @@ var resultflytitle=[];
     placeMarkerAndPanTo(e.latLng, map);
   });
 
-      var markers = [];
+     
       // Listen for the event fired when the user selects a prediction and retrieve
       // more details for that place.
       searchBox.addListener('places_changed', function () {
@@ -392,7 +421,7 @@ var resultflytitle=[];
         markers.forEach(function (marker) {
           marker.setMap(null);
         });
-        markers = [];
+       
 
         // For each place, get the icon, name and location.
         var bounds = new google.maps.LatLngBounds();
