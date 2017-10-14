@@ -18,15 +18,15 @@ def place(request, p):
     if request.user.is_authenticated():
          title = request.POST['title']
          desc=request.POST['desc']
-         photos = request.POST['img']
+         photos = request.POST.get('img')
          videos = request.POST['vid']
          loc = request.POST['loc']
-
+         print(photos)
          #Flyer.objects.all().delete()
          pr = Profile.objects.get(user=request.user)
         
 
-         fly = Flyer.objects.create(title=title, description=desc, location=loc, creater=pr)
+         fly = Flyer.objects.create(title=title, description=desc, location=loc, creater=pr , photos = photos)
             
          fly.save()
 
