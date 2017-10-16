@@ -16,70 +16,15 @@
   width: 100%;
   margin: 0 auto 100px;
 }
-.custom-container.active .card:first-child {
-  background: #f2f2f2;
-  margin: 0 15px;
-}
-.custom-container.active .card:nth-child(2) {
-  background: #fafafa;
-  margin: 0 10px;
-}
-.custom-container.active .card.alt {
-  top: 20px;
-  right: 0;
-  width: 100%;
-  min-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  padding: 60px 0 40px;
-  overflow: hidden;
-}
-.custom-container.active .card.alt .toggle {
-  position: absolute;
-  top: 40px;
-  right: -70px;
-  box-shadow: none;
-  -webkit-transform: scale(10);
-  transform: scale(10);
-  -webkit-transition: -webkit-transform .3s ease;
-  transition: -webkit-transform .3s ease;
-  transition: transform .3s ease;
-  transition: transform .3s ease, -webkit-transform .3s ease;
-}
-.custom-container.active .card.alt .toggle:before {
-  content: '';
-}
-.custom-container.active .card.alt .title,
-.custom-container.active .card.alt .input-container,
-.custom-container.active .card.alt .button-container {
-  left: 0;
-  opacity: 1;
-  visibility: visible;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
-}
-.custom-container.active .card.alt .title {
-  -webkit-transition-delay: .3s;
-          transition-delay: .3s;
-}
-.custom-container.active .card.alt .input-container {
-  -webkit-transition-delay: .4s;
-          transition-delay: .4s;
-}
-.custom-container.active .card.alt .input-container:nth-child(2) {
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
-}
-.custom-container.active .card.alt .input-container:nth-child(3) {
-  -webkit-transition-delay: .6s;
-          transition-delay: .6s;
-}
-.custom-container.active .card.alt .button-container {
-  -webkit-transition-delay: .7s;
-          transition-delay: .7s;
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
 }
 
-/* Card */
+
 .card {
   position: relative;
   background: #ffffff;
@@ -119,6 +64,7 @@
 }
 .card .input-container input {
   outline: none;
+  border:none;
   z-index: 1;
   position: relative;
   background: none;
@@ -128,7 +74,8 @@
   color: #212121;
   font-size: 18px;
   font-weight: 400;
-}
+}/* Card */
+
 .card .input-container input:focus ~ label {
   color: #9d9d9d;
   -webkit-transform: translate(-12%, -50%) scale(0.75);
@@ -200,10 +147,12 @@
 .card .button-container button span {
   position: relative;
   z-index: 1;
-  color: #ddd;
+  color: #37474f;
   -webkit-transition: .3s ease;
   transition: .3s ease;
 }
+
+
 .card .button-container button:before {
   content: '';
   position: absolute;
@@ -358,7 +307,7 @@
 }
 @keyframes buttonFadeInUp {
   0% {
-    bottom: 30px;
+    bottom: 0px;
     opacity: 0;
   }
 }
