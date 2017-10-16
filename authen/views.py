@@ -10,6 +10,8 @@ import hashlib
 import datetime
 import smtplib
 
+from explore.models import *
+
 # Create your views here.
 
 def register(request):
@@ -158,6 +160,10 @@ def viewprofile(request, p=None):
             pr = Profile.objects.get(user=user)
         else:
             pr = Profile.objects.get(user=request.user)
-        return render(request, 'profile.html', {"profile": pr})
+        fly = Flyer.objects.filter(creater = pr)
+        photos = Photo.objects.filter(user = pr)
+        videos = Video.objects.filter(user = pr)
+        print(photos)
+        return render(request, 'profile.html', {"profile": pr, "flyers" : fly, "photos" : photos, "videos" : videos})
     else:
         return redirect('/authen/login/')

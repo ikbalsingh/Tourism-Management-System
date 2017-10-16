@@ -1,6 +1,4 @@
-{% extends 'navbar.html' %}
-{% load static %}
-{% block content %}
+{% extends 'navbar.html' %} {% load static %} {% block content %}
 <div class="container" id="Public-Profile-Main-Container">
     <div class="row">
         <div class="col-lg-12 col-sm-12">
@@ -26,6 +24,7 @@
 
     <div class="col-md-12" id="Public-Profile-Users-Flyers-Container">
         <h4 id="Public-Profile-Header">{{profile.user.username}}'s TRAVEL BLOGS</h4>
+        {% for flyer in flyers %}
         <hr>
         <div class="col-sm-6 col-md-4" id="card-center">
             <div class="row">
@@ -33,64 +32,25 @@
                     <div class="card" id="Flyer-Card">
                         <div class="image">
                             <a href="../travelflyers/The%20Big%20Apple%21">
-                                    <img src="{% static 'src/public/FlyerBanner/photos/tn-6d4d7e8981003974d98f0cc20bbf3cca2f0364b4.jpg' %}" alt="hydrogen" data-id="1">
+                                    <img src="" alt="hydrogen" data-id="1">
                                 </a>
                         </div>
                         <div class="content">
-                            <a href="../travelflyers/The%20Big%20Apple%21">
-                                <h4 class="ui header"> The Big Apple!</h4>
+                            <a href="">
+                                <h4 class="ui header">{{flyer.title}}</h4>
                             </a>
                             <div class="description">
-                                By: hydrogen
-                            </div><br>
-                            <div class="meta">
-                                <a>Discovering the Big Apple!</a>
+                             {{flyer.description}}
                             </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                        Feb 28, 2016
-                                    </span>
-                            <span>
-                                        <i class="thumbs up icon"></i>0&nbsp;
-                                    </span>
+                            <div class="description">
+                                By: {{flyer.creater}}
+                            </div><br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-4" id="card-center">
-            <div class="row">
-                <div class="ui link cards" id="Travel-Flyer-Display-Cards">
-                    <div class="card" id="Flyer-Card">
-                        <div class="image">
-                            <a href="../travelflyers/Fiji%20Fun%21.html">
-                                                                                    <img src="../src/public/FlyerBanner/photos/tn-336f12d12c63a83c71383d7756c2fdb3bbcdbaa5.jpg" alt="hydrogen" data-id="2">
-                                                                            </a>
-                        </div>
-                        <div class="content">
-                            <a href="../travelflyers/Fiji%20Fun%21.html">
-                                <h4 class="ui header"> Fiji Fun!</h4>
-                            </a>
-                            <div class="description">
-                                By: hydrogen
-                            </div><br>
-                            <div class="meta">
-                                <a>Having a fun time in Fiji</a>
-                            </div>
-                        </div>
-                        <div class="extra content">
-                            <span class="right floated">
-                                        Feb 24, 2016
-                                    </span>
-                            <span>
-                                        <i class="thumbs up icon"></i>3&nbsp;
-                                    </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <!-- close col-md-12 -->
 
@@ -99,28 +59,19 @@
         <hr>
         <div class="col-md-12 gallery">
             <div class="row">
+                {% for photo in photos %}
                 <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
                     <div class="img-wrap">
                         <form method="post" action="http://davidtrushkov.com/travel/photos/112">
                             <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
                             <input type="hidden" name="_method" value="DELETE">
                             <a href="{% static 'src/public/FlyerPhotos/photos/hi.jpg' %}" data-lity>
-                                            <img src="{% static 'src/public/FlyerPhotos/photos/hi.jpg' %}" alt="" data-id="112">
+                                            <img src="{{photo.photo.url}}" alt="" data-id="112">
                                         </a>
                         </form>
                     </div>
                 </div>
-                <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
-                    <div class="img-wrap">
-                        <form method="post" action="http://davidtrushkov.com/travel/photos/112">
-                            <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <a href="../src/public/FlyerPhotos/photos/hi.jpg" data-lity>
-                                            <img src="../src/public/FlyerPhotos/photos/hi.jpg" alt="" data-id="112">
-                                        </a>
-                        </form>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -131,6 +82,7 @@
         <hr>
         <div class="col-md-12 gallery">
             <div class="row">
+                {% for video in videos %}                    
                 <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
                     <div class="img-wrap">
                         <form method="post" action="http://davidtrushkov.com/travel/photos/112">
@@ -138,24 +90,12 @@
                             <input type="hidden" name="_method" value="DELETE">
 
                             <video class='center' controls>
-                                <source src="{% static 'src/public/FlyerPhotos/photos/lol.mp4' %}" type="video/mp4">
+                                <source src="{{video.video.url}}" type="video/mp4">
                             </video>
                         </form>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
-                    <div class="img-wrap">
-                        <form method="post" action="http://davidtrushkov.com/travel/photos/112">
-                            <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                            <input type="hidden" name="_method" value="DELETE">
-
-                            <video class='center' controls>
-                                <source src="../src/public/FlyerPhotos/photos/lol.mp4" type="video/mp4">
-                            </video>
-
-                        </form>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
