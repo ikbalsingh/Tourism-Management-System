@@ -100,52 +100,21 @@
 
             <div class="col-md-12 gallery">
                 <div class="row">
+                    {% for photo in photos %}
                     <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
                         <div class="img-wrap">
                             <form method="post" action="http://davidtrushkov.com/travel/photos/100">
                                 <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <a href="{% static 'src/public/FlyerPhotos/photos/hi.jpg' %}" data-lity>
-                                            <img src="{% static 'src/public/FlyerPhotos/photos/hi.jpg' %}" alt="" data-id="100">
+                                            <img src="{{photo.photo.url}}" alt="" data-id="100">
                                         </a>
                             </form>
                         </div>
                     </div>
-                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
-                        <div class="img-wrap">
-                            <form method="post" action="http://davidtrushkov.com/travel/photos/101">
-                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <a href="../src/public/FlyerPhotos/photos/hi.jpg" data-lity>
-                                            <img src="../src/public/FlyerPhotos/photos/hi.jpg" alt="" data-id="100">
-                                        </a>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
-                        <div class="img-wrap">
-                            <form method="post" action="http://davidtrushkov.com/travel/photos/102">
-                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <a href="../src/public/FlyerPhotos/photos/hi.jpg" data-lity>
-                                            <img src="../src/public/FlyerPhotos/photos/hi.jpg" alt="" data-id="100">
-                                        </a>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
-                        <div class="img-wrap">
-                            <form method="post" action="http://davidtrushkov.com/travel/photos/103">
-                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <a href="../src/public/FlyerPhotos/photos/hi.jpg" data-lity>
-                                            <img src="../src/public/FlyerPhotos/photos/hi.jpg" alt="" data-id="100">
-                                        </a>
-                            </form>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-                <div class="row">
+                <!--<div class="row">
                     <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
                         <div class="img-wrap">
                             <form method="post" action="http://davidtrushkov.com/travel/photos/104">
@@ -236,7 +205,8 @@
                             </form>
                         </div>
                     </div>
-                </div><br>
+                </div>-->
+                <br>
                 <hr><br>
             </div>
             <div class="text-center">
@@ -245,6 +215,7 @@
 
             <div class="col-md-12 gallery">
                 <div class="row">
+                    {% for video in videos %}
                     <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
                         <div class="img-wrap">
                             <form method="post" action="http://davidtrushkov.com/travel/photos/112">
@@ -252,78 +223,14 @@
                                 <input type="hidden" name="_method" value="DELETE">
 
                                 <video class='center' controls>
-                                    <source src="{% static 'src/public/FlyerPhotos/photos/lol.mp4' %}" type="video/mp4">
+                                    <source src="{{video.video.url}}" type="video/mp4">
                                 </video>
 
                             </form>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
-                        <div class="img-wrap">
-                            <form method="post" action="http://davidtrushkov.com/travel/photos/112">
-                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                                <input type="hidden" name="_method" value="DELETE">
-
-                                <video class='center' controls>
-                                    <source src="../src/public/FlyerPhotos/photos/lol.mp4" type="video/mp4">
-                                </video>
-
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
-                        <div class="img-wrap">
-                            <form method="post" action="http://davidtrushkov.com/travel/photos/112">
-                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                                <input type="hidden" name="_method" value="DELETE">
-
-                                <video class='center' controls>
-                                    <source src="../src/public/FlyerPhotos/photos/lol.mp4" type="video/mp4">
-                                </video>
-
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
-                        <div class="img-wrap">
-                            <form method="post" action="http://davidtrushkov.com/travel/photos/112">
-                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                                <input type="hidden" name="_method" value="DELETE">
-
-                                <video class='center' controls>
-                                    <source src="../src/public/FlyerPhotos/photos/lol.mp4" type="video/mp4">
-                                </video>
-
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
-                        <div class="img-wrap">
-                            <form method="post" action="http://davidtrushkov.com/travel/photos/112">
-                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                                <input type="hidden" name="_method" value="DELETE">
-
-                                <video class='center' controls>
-                                    <source src="../src/public/FlyerPhotos/photos/lol.mp4" type="video/mp4">
-                                </video>
-
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
-                        <div class="img-wrap">
-                            <form method="post" action="http://davidtrushkov.com/travel/photos/112">
-                                <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
-                                <input type="hidden" name="_method" value="DELETE">
-
-                                <video class='center' controls>
-                                    <source src="../src/public/FlyerPhotos/photos/lol.mp4" type="video/mp4">
-                                </video>
-
-                            </form>
-                        </div>
-                    </div>
-
+                    {% endfor %}
+                    
                 </div>
             </div>
 

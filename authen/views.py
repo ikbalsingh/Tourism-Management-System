@@ -18,7 +18,8 @@ def register(request):
         email = request.POST['email']
         password = request.POST['password']
         confirmpassword = request.POST['confirmpassword']
-        photo = request.POST.get('photo')
+        photo = request.FILES.get('photo')
+        print("photo",photo)
         if password == confirmpassword:
             user = User.objects.create(username=username)
             user.set_password(request.POST['password'])
