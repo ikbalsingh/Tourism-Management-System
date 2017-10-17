@@ -73,6 +73,7 @@ if($('#Profile-image').length){
  * Count the letter in the Travel Flyer description textarea.
  */
 $(document).ready(function() {
+
     var text_max = 3000;
     $('#textarea_count').html(text_max + ' characters remaining');
 

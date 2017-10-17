@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
     <link rel="prefetch stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600">
 
-    <link rel="stylesheet" href="{% static 'src/public/css/libs/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'src/public/css/libs/sweetalert.css' %}">
     <link rel="stylesheet" href="{% static 'src/public/css/app.css' %}">
     <link rel="stylesheet" href="{% static 'src/public/css/navigation.css' %}">
@@ -40,74 +39,109 @@
 
     <link rel="stylesheet" href="{% static 'explore/location/css/footer-distributed-with-address-and-phones.css' %}">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-
-    <link rel="stylesheet" href="{% static 'explore/location/css/footer-distributed-with-address-and-phones.css' %}">
-
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+   
+<link href="https://fonts.googleapis.com/css?family=Manuale" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
 
     <script type="text/javascript" src="{% static 'src/public/js/libs/jquery.js' %}"></script>
-        
+        <style type="text/css">
+
+        hr{
+   border: 1px solid #ccc;
+}
+            .numby{
+               
+                font-size: 2em;
+                  font-family: 'Cookie', sans-serif;
+            }
+
+            .num{
+                 font-size: 1.2em;
+                  font-family: 'Montserrat', sans-serif;
+
+            }
+        </style>
+
+
+        <body>
     <br><br><br><br><br>
 
     <div class="container" style="background-color: #fafafa;">
 
-        <div class="col-md-12">
-            <br>
-            <div class="col-md-12">
-                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+ <div class="center-align"  style="font-family: 'Manuale', serif;" >
+
+     <br><br> <div class="col-xs-12 col-sm-12 col-md-12 center-align">
                     <a href="../login.html" id="thumbs-like-popup"> <i class="fa fa-thumbs-up" aria-hidden="true"></i>3 </a>
                     <div id="popup1" class="ui custom basic popup">
-                      Created by - {{flyer.creater}}
+                    
                     </div>
-                </div>
-            </div>
+                      <br>
+                       <div id="profilepic"><a href="#"><img style = " height : 150px; width:150px; border-radius: 50%; border: 1px solid #292c2f;" src="{{ flyer.creater.profile_pic.url }}"></a></div>
+                        
+                       <div style="font-family: 'Manuale'; font-size: 1.4em; margin-top: 10px"> Created by - {{flyer.creater}}</div>  <hr style="width:5%; border: 1px solid #ccc;"/>
+        <div class="col-md-12">  <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> {{flyer.title}}</p>  <hr style="width:5%; border: 1px solid #ccc;"/><div  class="center-align"  style="font-family: 'Manuale', serif; font-size: 1.2em;"  id="summary"></div><br>
 
-            <br><br>
-            <div class="rating text-center">
-                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            </div>
+       </div>
+
+ <div class="center-align weatherman" style="margin-top: '200px'">
+                <canvas id="weather" width="128" height="128" class="icons"></canvas> 
+            </div> 
+<br><br>
+
+<div class="row">
+     
+      <div class="col s12 m4"> <img src="{% static 'src/public/css/sun.png' %}" style = " height : 150px; width:150px;"><br><span id="sunrise" class="numby"></span><br><span id="sunset" class="numby"></span><br></div>
+      <div class="col s12 m4">  <img src="{% static 'src/public/css/temperature.png' %}" style = " height : 150px; width:150px;"><br><span id="maxTemp" class="numby"></span><br>
+                <span id="minTemp" class="numby"></span><br></div>
+      <div class="col s12 m4">  <img src="{% static 'src/public/css/wind.png' %}" style = " height : 150px; width:150px;"><br>  </div><span id="windspeed" class="numby"></span>
+     <br>
+    </div>
+
+
+                <br>
+           
+
+
+             <hr >
           
-            <p class="text-center" id="Flyer-Title"> {{flyer.title}}</p>
+           
+                <div class="col-xs-12 col-sm-12 col-md-12 center-align">
 
-            <div class="text-center weathermain">
-                <div id="location">{{flyer.title}}</div>
-                <hr>
-                <div id="summary"></div>
-                <div id="sunrise"></div>
-                <div id="sunset"></div>
-                <div id="maxTemp"></div>
-                <div id="minTemp"></div>
-                <div id="temp"></div>
-                <canvas id="weather" width="64" height="64" class="icons"></canvas>
-
-                <div id="windspeed"></div>
-
-            </div>
-            <br>
-
-            <div id="Flyer-Description" >
-                 {{flyer.description}}
+                </div>
+              
             </div>
 
-            <div class="text-center">
-                Photos
+        
+          
+           
+ 
+           
+         
+<p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> Description</p> <hr style="width:5%; border: 1px solid #ccc;"/>
+            <div id="Flyer-Description" style="font-family: 'Manuale', serif; text-align:justify;" >
+               &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp{{flyer.description}}
+            </div><hr>
+
+            <div class="center-align">
+             <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> Photos</p> <hr style="width:5%; border: 1px solid #ccc;"/>  <br><br>
             </div>
 
-            <div class="col-md-12 gallery">
+            <div class="col m12 gallery">
                 <div class="row">
                     {% for photo in photos %}
-                    <div class="col-xs-6 col-sm-3 col-md-3 gallery_image">
+                    <div class="col s12   col m4  gallery_image center-align">
                         <div class="img-wrap">
                             <form method="post" action="http://davidtrushkov.com/travel/photos/100">
                                 <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
                                 <input type="hidden" name="_method" value="DELETE">
-                                <a href="{% static 'src/public/FlyerPhotos/photos/hi.jpg' %}" data-lity>
-                                            <img src="{{photo.photo.url}}" alt="" data-id="100">
+                                <a href="{{photo.photo.url}}" data-lity>
+                                            <img width="400" height="250" src="{{photo.photo.url}}" alt="" data-id="100"><br>
+
                                         </a>
                             </form>
                         </div>
@@ -209,20 +243,20 @@
                 <br>
                 <hr><br>
             </div>
-            <div class="text-center">
-               Videos
+            <div class="center-align">
+              <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> Videos</p> <hr style="width:5%; border: 1px solid #ccc;"/>
             </div><br><br>
 
-            <div class="col-md-12 gallery">
+            <div class="col m12 gallery center-align">
                 <div class="row">
                     {% for video in videos %}
-                    <div class="col-xs-12 col-sm-12  col-md-6  gallery_image">
+                    <div class="col s12   col m4   gallery_image">
                         <div class="img-wrap">
                             <form method="post" action="http://davidtrushkov.com/travel/photos/112">
                                 <input type="hidden" name="_token" value="Tg5OWNRqqzUG9fLWKOUaDFkPUzf3l5nSyp8onTyC">
                                 <input type="hidden" name="_method" value="DELETE">
 
-                                <video class='center' controls>
+                                <video style="width:400px;height:250px;" class='center responsive-video' controls>
                                     <source src="{{video.video.url}}" type="video/mp4">
                                 </video>
 
@@ -234,17 +268,85 @@
                 </div>
             </div>
 
-        </div>
+        <hr>
         <!-- close clo-md-12 -->
 
         <br>
-        <div class="text-center">Street View 360 degree :</div>
-        <div class="text-center">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1506024852553!6m8!1m7!1sDQ963riZ60HFXlI-L94ENw!2m2!1d42.34557089774134!2d-71.0983235904246!3f326.67!4f-1.5900000000000034!5f1.625774341190601"
-                width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <div class="center-align street"><p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> 360° Street View</p> <hr style="width:5%; border: 1px solid #ccc;"/></div>
+
+
+        <div class="street" >
+    
+    <div id="mapp"></div>
+<div id="pano" class=" center-align" style="margin:auto; width: 700px; height: 500px"></div>
+
+<script type="text/javascript">
+   
+   
+
+
+
+  var mapp;
+      var panorama;
+
+      function initMap() {
+        var berkeley = { lat: parseFloat(loc[0]), lng: parseFloat(loc[1]) };
+
+        var sv = new google.maps.StreetViewService();
+
+        panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'));
+
+        mapp = new google.maps.Map(document.getElementById('mapp'), {
+          center: berkeley,
+          zoom: 16,
+          streetViewControl: false
+        });
+        sv.getPanorama({location: berkeley, radius: 100}, processSVData);      
+      }
+
+      function processSVData(data, status) {
+        if (status === 'OK') {
+              $(".street").show();
+             console.log(parseFloat(loc[0])+"fffff");
+          panorama.setPano(data.location.pano);
+          panorama.setPov({
+            heading: 270,
+            pitch: 0
+          });
+
+          panorama.setVisible(true);    
+        }
+       
+        else{
+      $(".street").hide();
+}
+        
+      }
+</script>
+ 
+</div>
+ </div><br><br></div>
+
+
+
+
+
+
+
+  <div class="col-md-12">
+            <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> Location on Map</p> <hr style="width:5%; border: 1px solid #ccc;"/>
+
+            <div id="mapp"></div>
+           
+          
         </div>
+
+
+
+
         <div class="col-md-12">
-            <br><br>
+            
+
             <div id="map"></div>
             <br><br>
 
@@ -266,16 +368,7 @@ console.log(loc);
 
         <script>
 
-            
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
+     
         (function() { // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
         s.src = 'https://travelblog-2.disqus.com/embed.js';
@@ -293,16 +386,18 @@ console.log(loc);
     <script src="{% static 'src/public/js/libs/sweetalert.js' %}"></script>
     <script src="{% static 'src/public/js/libs/FitText.js' %}"></script>
     <script src="{% static 'src/semantic/dist/semantic.min.js' %}"></script>
+
+    
     <script src="{% static 'src/public/js/main.js' %}"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="{% static 'src/public/js/libs/jquery.js' %}"></script>
     
-    <script type="text/javascript" src="{% static 'explore/location/js/materialize.min.js' %}"></script>
     <script>
         
 
 
 $(document).ready(function () {
+   
   $(".button-collapse").sideNav();
    passLoocation(loc[0], loc[1]);
   $('.materialboxed').materialbox();
@@ -339,20 +434,20 @@ function apicall(lat, long) {
       $("#summary").html(response.daily.data[0].summary);
       if (response.daily.data[0].sunriseTime && response.daily.data[0].sunsetTime) {
 
-        $("#sunrise").html("Sunrise " + timeConverter(response.daily.data[0].sunriseTime));
-        $("#sunset").html("Sunset " + timeConverter(response.daily.data[0].sunsetTime));
+        $("#sunrise").html("Sunrise : <span class=\"num\">" + timeConverter(response.daily.data[0].sunriseTime));
+        $("#sunset").html("Sunset : <span class=\"num\">" + timeConverter(response.daily.data[0].sunsetTime));
       }
 
-      $("#maxTemp").html("<i class=\"fa fa-angle-up\" aria-hidden=\"true\"></i> " + tmax + "°C");
-      $("#minTemp").html("<i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i> " + tmin + "°C");
-      $("#temp").html(Math.round(response.currently.temperature) + "°C");
-      $("#windspeed").html("Wind " + response.currently.windSpeed + " m/s");
+      $("#maxTemp").html("Max temperature : <span class=\"num\">" + tmax + "</span> °C");
+      $("#minTemp").html("Min temperature : <span class=\"num\">" + tmin + "</span> °C");
+      $("#temp").html("Average temperature : <span class=\"num\">"+Math.round(response.currently.temperature) + "</span> °C");
+      $("#windspeed").html("Windspeed : <span class=\"num\">" + response.currently.windSpeed + "</span> m/s");
 
       temperature = Math.round(response.currently.temperature);   //set value of global variables
       Tminimum = tmin;
       Tmaximum = tmax;
 
-      var icons = new Skycons({ "color": "white" });
+      var icons = new Skycons({ "color": "#424242 " });
       switch (response.currently.icon) {
         case "rain":
           icons.set("weather", Skycons.RAIN);
@@ -403,9 +498,9 @@ function timeConverter(UNIX_timestamp) {
   var a = new Date(UNIX_timestamp * 1000);
   var hour = a.getHours();
   var min = a.getMinutes();
-  var time = 'am';
+  var time = '</span>&nbspam';
   if (hour > 12) {
-    time = 'pm';
+    time = '</span>&nbsppm';
     hour = hour - 12;
   }
   if (min / 10 < 1)
@@ -419,16 +514,23 @@ function timeConverter(UNIX_timestamp) {
 
            
     function initAutocomplete() {
+
+         initMap();
        map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: parseFloat(loc[0]), lng: parseFloat(loc[1]) },
         zoom: 13,
         mapTypeId: 'roadmap'
       });
+
+
     var marker = new google.maps.Marker({
     position: { lat: parseFloat(loc[0]), lng: parseFloat(loc[1])},
     map: map,
     title: '{{flyer.title}}'
   });
+
+
+   
 }
 
       
@@ -445,10 +547,9 @@ function timeConverter(UNIX_timestamp) {
         jQuery("#Flyer-Description").fitText(1.6, { minFontSize: '10px', maxFontSize: '18px' });
     </script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaB_9hgeARViVKIT6O1pFKXRCSuYaol2A&amp;libraries=places&amp;callback=initAutocomplete"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaB_9hgeARViVKIT6O1pFKXRCSuYaol2A&amp;libraries=places&amp;callback=initAutocomplete"></script>
 
-
- 
+   </body>
 
    
 {% endblock content %}
