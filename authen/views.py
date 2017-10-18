@@ -21,10 +21,12 @@ def register(request):
         password = request.POST['password']
         confirmpassword = request.POST['confirmpassword']
         photo = request.FILES.get('photo')
+        bio = request.POST['bio']
         print("photo",photo)
         if password == confirmpassword:
-            user = User.objects.create(username=username)
+            user = User.objects.create(username=username )
             user.set_password(request.POST['password'])
+
             user.save()
         else:
             print('Passwords do not match')
@@ -37,7 +39,7 @@ def register(request):
             tp = hash.hexdigest()
             print(tp)
             user_profile = Profile.objects.create(
-                user=user, email=email, profile_pic=photo, confirmhash=tp)
+                user=user, email=email,bio=bio, profile_pic=photo, confirmhash=tp)
             print(user_profile)
             return HttpResponseRedirect('/authen/login/')
         else:

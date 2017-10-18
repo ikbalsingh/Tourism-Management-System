@@ -1,10 +1,10 @@
 var imgSrcs =[
 
-    "images/mainpage1.jpg",
-    "images/mainpage2.jpg",
-    "images/mainpage3.jpg",
-    "images/mainpage4.jpg",
-    "images/mainpage.jpg"
+    "/static/authen/images/mainpage1.jpg",
+    "/static/authen/images/mainpage2.jpg",
+    "/static/authen/images/mainpage3.jpg",
+    "/static/authen/images/mainpage4.jpg",
+    "/static/authen/images/mainpage.jpg"
 ];
 
 

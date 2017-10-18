@@ -161,6 +161,23 @@
     pointer-events: auto;
   }
 
+  #time {
+    pointer-events: none;
+  }
+
+  #time.active {
+    pointer-events: auto;
+  }
+
+
+  #date {
+    pointer-events: none;
+  }
+
+  #date.active {
+    pointer-events: auto;
+  }
+
   #createflyer{
     width: 100%;
   }
@@ -226,6 +243,16 @@
         <div class="input-field col s12">
           <input placeholder="" id="loc" type="text" name="loc">
           <label for="flyertitle">location</label>
+        </div>
+
+         <div class="input-field col s12">
+          <input placeholder="" id="date" type="text" name="date">
+          <label for="flyertitle">date</label>
+        </div>
+
+         <div class="input-field col s12">
+          <input placeholder="" id="time" type="text" name="time">
+          <label for="flyertitle">time</label>
         </div>
         <hr class="hrlin">
 
@@ -305,8 +332,15 @@
     }
 
     flyeractive = !flyeractive;
+
+
+  
   }
 
+
+
+
+  
   // This example adds a search box to a map, using the Google Place Autocomplete
   // feature. People can enter geographical searches. The search box will return a
   // pick list containing a mix of places and predicted search terms.
@@ -453,6 +487,58 @@
   }
   function placeMarkerAndPanTo(latLng, map) {
     $("#loc").attr("value", latLng);
+
+
+digi();
+    function digi() {
+  var date = new Date(),
+      hour = date.getHours(),
+      minute = checkTime(date.getMinutes()),
+      ss = checkTime(date.getSeconds());
+      var dd = date.getDate();
+var mm = date.getMonth()+1; //January is 0!
+var yyyy = date.getFullYear();
+  function checkTime(i) {
+    if( i < 10 ) {
+      i = "0" + i;
+    }
+    return i;
+  }
+if ( hour > 12 ) {
+  hour = hour - 12;
+  if ( hour == 12 ) {
+    hour = checkTime(hour);
+
+ $("#time").attr("value", hour+":"+minute+":"+ss+" AM");
+  }
+  else { 
+    hour = checkTime(hour);
+   $("#time").attr("value", hour+":"+minute+":"+ss+" PM");
+  }
+}
+else {
+ 
+  $("#time").attr("value", hour+":"+minute+":"+ss+" AM");
+}
+if(dd<10){
+    dd='0'+dd; 
+} 
+if(mm<10){
+    mm='0'+mm;
+} 
+var today = dd+'/'+mm+'/'+yyyy;
+
+  $("#date").attr("value", today);
+}
+
+
+
+
+
+
+
+
+
     marker = new google.maps.Marker({
       position: latLng,
       map: map

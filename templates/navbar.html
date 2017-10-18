@@ -57,7 +57,7 @@
 <body>
 <ul id="dropdown1" class="dropdown-content">
   <li><span style="color:#000;">{{profile.user.username}}</span></li>  <li class="divider"></li>
-  <li><a href="#!">My Profile</a></li>
+  <li><a href="/authen/viewprofile/">My Profile</a></li>
   <li class="divider"></li>
   <li><a  href="/authen/logout">Logout</a></li>
 </ul>
@@ -68,8 +68,11 @@
                 <a href="index.html" class="brand-logo"><i class="large material-icons">landscape</i><span id="logo1">Travel</span><span id="logo2">Book</span></a>
                
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
+                     {% if profile  %}
+                     <li><a href="/dashboard/home/">Dashboard</a></li>
+                      {% endif %}
+                    <li><a href="/home/">Home</a></li>
+                    <li><a href="/about/">About Us</a></li>
                     <li><a href="badges.html">FAQ</a></li>
                     {% if profile  %}
                     
@@ -80,8 +83,8 @@
                         {% endif %}
                                         
                     {% else %}
-                        <li><a href="index.html">Log In</a></li>
-                        <li><a href="about-us.html">Sign Up</a></li>
+                        <li><a href="/authen/login/">Log In</a></li>
+                        <li><a href="/authen/register/">Sign Up</a></li>
                     {% endif %}
                 </ul>
 
@@ -101,23 +104,23 @@
 
         
         
-    <li><a class="waves-effect"  href="#!">My Profile</a></li>
-    <li><a  class="waves-effect" href="#!">Home</a></li>
+    <li><a class="waves-effect"  href="/authen/viewprofile/">My Profile</a></li>
+       <li><a class="waves-effect"  href="/dashboard/home/">Dashboard</a></li>
+    <li><a  class="waves-effect" href="/home/">Home</a></li>
     
-    <li><a class="waves-effect">About us</a></li>
+    <li><a class="waves-effect"  href="/about/">About us</a></li>
     <li><a class="waves-effect">FAQ</a></li>
-    <li><a class="waves-effect" href="#!">Logout</a></li>
+    <li><a class="waves-effect" href="/authen/logout/">Logout</a></li>
           {% endif %}
       
 
        {% else %}
        <a href="#"><span class="white-text email">Not logged in</span></a>
     </div></li> 
-<li><a  class="waves-effect" href="#!">Home</a></li>
-    <li><a  class="waves-effect" href="#!">Login</a></li>
-<li><a  class="waves-effect" href="#!">Sign up</a></li>
-
-    <li><a class="waves-effect">About us</a></li>
+<li><a  class="waves-effect" href="/home/">Home</a></li>
+    <li><a  class="waves-effect" href="/authen/login/">Login</a></li>
+<li><a  class="waves-effect" href="/authen/register/">Sign up</a></li>
+    <li><a class="waves-effect"  href="/about/">About us</a></li>
     <li><a class="waves-effect">FAQ</a></li>
        {% endif %}
   </ul>
@@ -139,7 +142,7 @@
     <script src="{% static 'src/public/js/main.js' %}"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
-    <script src="{% static 'authen/js/index.js' %}"></script>
+   
 
     <footer class="footer-distributed">
 
@@ -201,6 +204,7 @@
     
     $(document).ready(function(){
         $('select').material_select();
+         $(".button-collapse").sideNav();
     });
 </script>
 </html>

@@ -19,10 +19,12 @@ def place(request, p):
         title = request.POST['title']
         desc = request.POST['desc']
         loc = request.POST['loc']
+        date = request.POST['date']
+        time = request.POST['time']
         # Flyer.objects.all().delete()
         pr = Profile.objects.get(user=request.user)
         fly = Flyer.objects.create(
-            title=title, description=desc, location=loc, creater=pr)
+            title=title, description=desc, location=loc, creater=pr,date=date,time=time)
         fly.save()
         print("kjgjg", request.FILES)
         a = request.FILES

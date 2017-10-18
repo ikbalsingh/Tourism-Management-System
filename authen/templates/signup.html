@@ -20,6 +20,15 @@
   <link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="{%  static 'authen/css/signup.css' %}">
+  <style type="text/css">
+     #flydesc {
+    word-break: break-word !important;
+  }
+
+  .areat {
+    margin-top: 5px;
+  }
+  </style>
 <br><br>
   <div class="custom-container" style="margin-top : 20px">
     <div class="card" style="margin : -20px 0"></div>
@@ -57,6 +66,17 @@
           <label for="#{label}"></label>
           <div class="bar"></div>
         </div>
+
+        <div class="input-container">description
+            <textarea  type="text"   id="bio"  required="required" class="bio input" rows="30" cols="50" name="bio">
+
+</textarea>
+            <label id="flydesc" for="flydesc"></label>
+          </div>
+
+
+          
+
         <div class="button-container">
           <button><span>Next</span></button>
         </div>

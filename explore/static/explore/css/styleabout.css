@@ -63,10 +63,7 @@ body {
           font-weight: bold;
    }
 
-   img{
-    height:200px;
-    
-   }
+   
 
    .card{
 
@@ -91,22 +88,7 @@ body {
 .ourpic{
   margin-bottom: 5%;
 }
-@media screen and (max-width: 600px) {
-    .card2 {
-        float: none;
-    }
-    .card1{
-      float: none;
-    }
 
-    .card{
-      width: 300px;
-    }
-    img{
-    height:353px;
-    
-   }
-}
 
 #js{
    width: 35px;
