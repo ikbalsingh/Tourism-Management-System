@@ -57,7 +57,8 @@
 <body>
 <ul id="dropdown1" class="dropdown-content">
   <li><span style="color:#000;">{{profile.user.username}}</span></li>  <li class="divider"></li>
-  <li><a href="/authen/viewprofile/">My Profile</a></li>
+  <li><a href="/authen/viewprofile/">My Profile</a></li> <li class="divider"></li>
+   <li><a href="/authen/myaccount/">My Account</a></li>       
   <li class="divider"></li>
   <li><a  href="/authen/logout">Logout</a></li>
 </ul>
@@ -81,7 +82,7 @@
 
                         <li id="profilepic"><a class="dropdown-button" href="#!" data-activates="dropdown1"><img style = " height : 30px; margin-bottom: -10px;" src="{{ profile.profile_pic.url }}"><i class="material-icons right">arrow_drop_down</i></a></li>
                         {% endif %}
-                                        
+                                
                     {% else %}
                         <li><a href="/authen/login/">Log In</a></li>
                         <li><a href="/authen/register/">Sign Up</a></li>
@@ -107,7 +108,7 @@
     <li><a class="waves-effect"  href="/authen/viewprofile/">My Profile</a></li>
        <li><a class="waves-effect"  href="/dashboard/home/">Dashboard</a></li>
     <li><a  class="waves-effect" href="/home/">Home</a></li>
-    
+     <li><a href="/authen/myaccount/">My Account</a></li>  
     <li><a class="waves-effect"  href="/about/">About us</a></li>
     <li><a class="waves-effect">FAQ</a></li>
     <li><a class="waves-effect" href="/authen/logout/">Logout</a></li>

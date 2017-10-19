@@ -76,18 +76,15 @@
  <div class="center-align"  style="font-family: 'Manuale', serif;" >
 
      <br><br> <div class="col-xs-12 col-sm-12 col-md-12 center-align">
-                    <a href="../login.html" id="thumbs-like-popup"> <i class="fa fa-thumbs-up" aria-hidden="true"></i>3 </a>
-                    <div id="popup1" class="ui custom basic popup">
-                    
-                    </div>
+                   
                       <br>
-                       <div id="profilepic"><a href="#"><img style = " height : 150px; width:150px; border-radius: 50%; border: 1px solid #292c2f;" src="{{ flyer.creater.profile_pic.url }}"></a></div>
+                       <div id="profilepic"><img style = " height : 150px; width:150px; border-radius: 50%; border: 1px solid #292c2f;" src="{{ flyer.creater.profile_pic.url }}"></div>
                         
                        <div style="font-family: 'Manuale'; font-size: 1.4em; margin-top: 10px"> Created by - {{flyer.creater}}</div>
 <div style="font-family: 'Manuale'; font-size: 1em;"> Dated - {{flyer.date}}</div>
 <div style="font-family: 'Manuale'; font-size: 1em;" > At  - {{flyer.time}}</div>
 <hr style="width:5%; border: 1px solid #ccc;"/>
-<div style="font-family: 'Cookie'; font-size: 1.6em;" >  {{flyer.creater.bio}}</div>
+<div style="font-family: 'Manuale'; font-size: 1.3em;line-height: 30px" >  {{flyer.creater.bio}}</div>
 
                          <hr style="width:5%; border: 1px solid #ccc;"/>
         <div class="col-md-12">  <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> {{flyer.title}}</p>  <hr style="width:5%; border: 1px solid #ccc;"/><div  class="center-align"  style="font-family: 'Manuale', serif; font-size: 1.2em;"  id="summary"></div><br>

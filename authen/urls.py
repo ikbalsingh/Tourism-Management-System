@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^(?P<p>[\w\-\_]+)/resetpassword/$',views.resetpassword),
     url(r'^viewprofile/(?P<p>[\w]+)', views.viewprofile),
     url(r'^viewprofile', views.viewprofile),
+      url(r'^myaccount', views.myaccount),
 ]
