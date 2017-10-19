@@ -1,10 +1,35 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 
-def faq(request):
-    return render(request,'faq.html')
+from authen.models import *
+from explore.models import *
+
+def home(request):
+     if request.user.is_authenticated():
+        pr = Profile.objects.get(user=request.user)
+        return render(request, 'index.html', {'profile': pr})
 
 def about(request):
-    return render(request,'about-us.html')
+     if request.user.is_authenticated():
+        pr = Profile.objects.get(user=request.user)
+        return render(request, 'about-us.html', {'profile': pr})
 
-def contact(request):
-    return render(request,'contact-us.html')
+def friends(request):
+     if request.user.is_authenticated():
+        pro = Profile.objects.all()
+        pr = Profile.objects.get(user=request.user)
+        return render(request, 'friends.html', {'profile': pr, 'list':pro})
+
+
+def friendprofile(request, p):
+      if request.user.is_authenticated():
+        user = User.objects.get(username=p)
+        pr = Profile.objects.get(user=user)
+        fly = Flyer.objects.filter(creater = pr)
+        photos = Photo.objects.filter(user = pr)
+        videos = Video.objects.filter(user = pr)
+        print(photos)
+        return render(request, 'profile.html', {"profile": pr, "flyers" : fly, "photos" : photos, "videos" : videos})
+   
+
+

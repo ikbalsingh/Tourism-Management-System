@@ -27,7 +27,10 @@ urlpatterns = [
     url(r'^chat/', include('chatroom.urls')),
     url(r'^authen/', include('authen.urls')),
     url(r'^dashboard/', include('explore.urls')),
-    url(r'^faq/',views.faq ),
+    url(r'^home/',views.home ),
     url(r'^about/', views.about),
-    url(r'^contact/',views.contact),
+    url(r'^friends/(?P<p>[\w]+)', views.friendprofile),
+    url(r'^friends/', views.friends),
+
+   
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

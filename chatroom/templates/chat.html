@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "navbar.html" %}
     {% load static %}
-    <head>
-    <!-- Meta Data -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Page title -->
-    <title>Spika 2.0.0</title>
-    <!-- Scripts -->
-    <script type="text/javascript" src="{% static 'js/bundle.js' %}"></script>
-    <link href="{% static 'css/stylechat.css' %}" rel="stylesheet">
-
-    </head>
-    <body>
-
-    </body>
-
-</html>
+    {% block content %}
+    <link href="{% static 'chat/css/stylechat.css' %}" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'chat/js/bundle.js' %}"></script>
+{% endblock content %}
