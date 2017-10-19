@@ -73,6 +73,7 @@
                      <li><a href="/dashboard/home/">Dashboard</a></li>
                       {% endif %}
                     <li><a href="/home/">Home</a></li>
+                    <li><a href="/friends/">Friends</a></li>
                     <li><a href="/about/">About Us</a></li>
                     <li><a href="badges.html">FAQ</a></li>
                     {% if profile  %}
@@ -108,6 +109,7 @@
     <li><a class="waves-effect"  href="/authen/viewprofile/">My Profile</a></li>
        <li><a class="waves-effect"  href="/dashboard/home/">Dashboard</a></li>
     <li><a  class="waves-effect" href="/home/">Home</a></li>
+    <li><a href="/friends/">Friends</a></li>
      <li><a href="/authen/myaccount/">My Account</a></li>  
     <li><a class="waves-effect"  href="/about/">About us</a></li>
     <li><a class="waves-effect">FAQ</a></li>
@@ -144,6 +146,21 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
    
+
+
+   <style type="text/css">
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+</style>
+
+
 
     <footer class="footer-distributed">
 

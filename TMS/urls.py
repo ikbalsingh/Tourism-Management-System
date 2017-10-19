@@ -29,5 +29,8 @@ urlpatterns = [
     url(r'^dashboard/', include('explore.urls')),
     url(r'^home/',views.home ),
     url(r'^about/', views.about),
+    url(r'^friends/(?P<p>[\w]+)', views.friendprofile),
+    url(r'^friends/', views.friends),
+
    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
