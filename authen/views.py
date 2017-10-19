@@ -14,6 +14,7 @@ from explore.models import *
 
 # Create your views here.
 
+
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -22,9 +23,9 @@ def register(request):
         confirmpassword = request.POST['confirmpassword']
         photo = request.FILES.get('photo')
         bio = request.POST['bio']
-        print("photo",photo)
+        print("photo", photo)
         if password == confirmpassword:
-            user = User.objects.create(username=username )
+            user = User.objects.create(username=username)
             user.set_password(request.POST['password'])
 
             user.save()
@@ -39,7 +40,7 @@ def register(request):
             tp = hash.hexdigest()
             print(tp)
             user_profile = Profile.objects.create(
-                user=user, email=email,bio=bio, profile_pic=photo, confirmhash=tp)
+                user=user, email=email, bio=bio, profile_pic=photo, confirmhash=tp)
             print(user_profile)
             return HttpResponseRedirect('/authen/login/')
         else:
@@ -48,7 +49,8 @@ def register(request):
         if request.user.is_authenticated():
             return HttpResponseRedirect('/dashboard')
         else:
-            return render(request, 'signup.html',{"profile" : None})
+            return render(request, 'signup.html', {"profile": None})
+
 
 def login(request):
     if request.method == 'POST':
@@ -64,7 +66,8 @@ def login(request):
         if request.user.is_authenticated():
             return HttpResponseRedirect('/dashboard')
         else:
-            return render(request, 'login.html',{"profile" : None})
+            return render(request, 'login.html', {"profile": None})
+
 
 def logout(request):
     if request.user.is_authenticated():
@@ -72,7 +75,6 @@ def logout(request):
         return redirect('/authen/login/')
     else:
         return redirect('/authen/login/')
-
 
 
 def forgotpassword(request):
@@ -125,7 +127,8 @@ def forgotpassword(request):
         if request.user.is_authenticated():
             return HttpResponseRedirect('/dashboard')
         else:
-            return render(request, 'forgotpass.html',{"profile" : None })
+            return render(request, 'forgotpass.html', {"profile": None})
+
 
 def resetpassword(request, p):
     # print(p)
@@ -153,7 +156,8 @@ def resetpassword(request, p):
     else:
         up = Profile.objects.get(confirmhash=p)
         print(up)
-        return render(request, 'resetpass.html', {'user': up , "profile" : None})
+        return render(request, 'resetpass.html', {'user': up, "profile": None})
+
 
 def viewprofile(request, p=None):
     if request.user.is_authenticated():
@@ -162,27 +166,44 @@ def viewprofile(request, p=None):
             pr = Profile.objects.get(user=user)
         else:
             pr = Profile.objects.get(user=request.user)
-        fly = Flyer.objects.filter(creater = pr)
-        photos = Photo.objects.filter(user = pr)
-        videos = Video.objects.filter(user = pr)
+        fly = Flyer.objects.filter(creater=pr)
+        photos = Photo.objects.filter(user=pr)
+        videos = Video.objects.filter(user=pr)
         print(photos)
-        return render(request, 'profile.html', {"profile": pr, "flyers" : fly, "photos" : photos, "videos" : videos})
+        return render(request, 'profile.html', {"profile": pr, "flyers": fly, "photos": photos, "videos": videos})
     else:
         return redirect('/authen/login/')
 
 
-def myaccount(request, p=None):
-    #upar wale viewprofile ka same copy kia hai
+def myaccount(request):
+    # upar wale viewprofile ka same copy kia hai
     if request.user.is_authenticated():
-        if p is not None:
-            user = User.objects.get(username=p)
-            pr = Profile.objects.get(user=user)
-        else:
-            pr = Profile.objects.get(user=request.user)
-        fly = Flyer.objects.filter(creater = pr)
-        photos = Photo.objects.filter(user = pr)
-        videos = Video.objects.filter(user = pr)
-        print(photos)
-        return render(request, 'account.html', {"profile": pr, "flyers" : fly, "photos" : photos, "videos" : videos})
+        pr = Profile.objects.get(user=request.user)
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            email = request.POST.get('email')
+            bio = request.POST.get('bio')
+            photo = request.FILES.get('photo')
+            print(photo)
+            user = request.user
+            user.username = username
+            hash = hashlib.sha1()
+            temp = email + 'hahaha'
+            hash.update(temp.encode('utf-8'))
+            tp = hash.hexdigest()
+            print(tp)
+            try:
+                user.save()
+                # pr.update(email=email,bio = bio,profile_pic = photo,confirmhash = tp)
+                pr.email = email
+                pr.bio = bio
+                if photo is not None:
+                    pr.profile_pic = photo
+                pr.confirmhash =  tp
+                pr.save(update_fields = ["email","bio","profile_pic","confirmhash"])
+            except:
+                return HttpResponse('error')
+
+        return render(request, 'account.html', {"profile": pr })
     else:
         return redirect('/authen/login/')

@@ -15,10 +15,10 @@ class Profile(models.Model):
     def __str__(self):
         return  self.user.username
 
-    def createhash(self, email):
-        hash = hashlib.sha1()
-        temp = email + 'hahaha'
-        hash.update(temp.encode('utf-8'))
-        tp = hash.hexdigest()
-        print(tp)
-        self.confirmhash = tp
+    # def createhash(self, email):
+    #     hash = hashlib.sha1()
+    #     temp = email + 'hahaha'
+    #     hash.update(temp.encode('utf-8'))
+    #     tp = hash.hexdigest()
+    #     print(tp)
+    #     self.confirmhash = tp
