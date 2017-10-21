@@ -176,8 +176,7 @@ def viewprofile(request, p=None):
 
 
 def myaccount(request):
-    # upar wale viewprofile ka same copy kia hai
-    if request.user.is_authenticated():
+       if request.user.is_authenticated():
         pr = Profile.objects.get(user=request.user)
         if request.method == 'POST':
             username = request.POST.get('username')
