@@ -36,7 +36,7 @@ input:-webkit-autofill:active {
   transition: .3s ease;
   /* Title */
   /* Inputs */
-  /* Button */
+  /* ignore */
   /* Footer */
   /* Alt Card */
 }
@@ -123,11 +123,15 @@ input:-webkit-autofill:active {
 .card .input-container .bar:after {
   right: 50%;
 }
-.card .button-container {
+.card .ignore-container {
   margin: 0 60px;
   text-align: center;
 }
-.card .button-container button {
+
+.button-container{
+  text-align: center;
+}
+.card .ignore-container ignore {
   outline: 0;
   cursor: pointer;
   position: relative;
@@ -144,7 +148,7 @@ input:-webkit-autofill:active {
   -webkit-transition: .3s ease;
   transition: .3s ease;
 }
-.card .button-container button span {
+.card .ignore-container ignore span {
   position: relative;
   z-index: 1;
   color: #37474f;
@@ -153,7 +157,7 @@ input:-webkit-autofill:active {
 }
 
 
-.card .button-container button:before {
+.card .ignore-container ignore:before {
   content: '';
   position: absolute;
   top: 50%;
@@ -168,16 +172,16 @@ input:-webkit-autofill:active {
   -webkit-transition: .3s ease;
   transition: .3s ease;
 }
-.card .button-container button:hover, .card .button-container button:active, .card .button-container button:focus {
+.card .ignore-container ignore:hover, .card .ignore-container ignore:active, .card .ignore-container ignore:focus {
   border-color: #37474f;
 }
-.card .button-container button:hover span, .card .button-container button:active span, .card .button-container button:focus span {
+.card .ignore-container ignore:hover span, .card .ignore-container ignore:active span, .card .ignore-container ignore:focus span {
   color: #37474f;
 }
-.card .button-container button:active span, .card .button-container button:focus span {
+.card .ignore-container ignore:active span, .card .ignore-container ignore:focus span {
   color: #ffffff;
 }
-.card .button-container button:active:before, .card .button-container button:focus:before {
+.card .ignore-container ignore:active:before, .card .ignore-container ignore:focus:before {
   opacity: 1;
   -webkit-transform: scale(10);
   transform: scale(10);
@@ -214,7 +218,7 @@ input:-webkit-autofill:active {
   /* Toggle */
   /* Title */
   /* Input */
-  /* Button */
+  /* ignore */
 }
 .card.alt .toggle {
   position: relative;
@@ -242,7 +246,7 @@ input:-webkit-autofill:active {
 }
 .card.alt .title,
 .card.alt .input-container,
-.card.alt .button-container {
+.card.alt .ignore-container {
   left: 100px;
   opacity: 0;
   visibility: hidden;
@@ -283,29 +287,29 @@ input:-webkit-autofill:active {
 .card.alt .input-container .bar {
   background: rgba(255, 255, 255, 0.8);
 }
-.card.alt .button-container button {
+.card.alt .ignore-container ignore {
   width: 100%;
   background: #ffffff;
   border-color: #ffffff;
 }
-.card.alt .button-container button span {
+.card.alt .ignore-container ignore span {
   color: #37474f;
 }
-.card.alt .button-container button:hover {
+.card.alt .ignore-container ignore:hover {
   background: rgba(255, 255, 255, 0.9);
 }
-.card.alt .button-container button:active:before, .card.alt .button-container button:focus:before {
+.card.alt .ignore-container ignore:active:before, .card.alt .ignore-container ignore:focus:before {
   display: none;
 }
 
 /* Keyframes */
-@-webkit-keyframes buttonFadeInUp {
+@-webkit-keyframes ignoreFadeInUp {
   0% {
     bottom: 30px;
     opacity: 0;
   }
 }
-@keyframes buttonFadeInUp {
+@keyframes ignoreFadeInUp {
   0% {
     bottom: 0px;
     opacity: 0;
