@@ -18,6 +18,13 @@ def about(request):
      else:
         return render(request,'about-us.html')
 
+def faq(request):
+     if request.user.is_authenticated():
+        pr = Profile.objects.get(user=request.user)
+        return render(request, 'faq.html', {'profile': pr})
+     else:
+        return render(request, 'faq.html')
+
 def friends(request):
      if request.user.is_authenticated():
         pro = Profile.objects.all()
