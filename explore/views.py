@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from authen.models import *
 from explore.models import *
+from PIL import Image
+
 # Create your views here.
 
 
@@ -32,7 +34,10 @@ def place(request, p):
         for photo in request.FILES.getlist('img'):
             print(photo)
             photomodel = Photo.objects.create(user=pr, flyer=fly, photo=photo)
-            photomodel.save()
+            trial_image = Image.open(photo)
+
+            if trial_image.verify():
+               photomodel.save()
 
         for video in request.FILES.getlist('vid'):
             videomodel = Video.objects.create(user=pr, flyer=fly, video=video)
