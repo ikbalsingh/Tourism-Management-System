@@ -68,10 +68,12 @@
 
 
         <body>
-    <br><br><br><br><br>
+    
 
     <div class="container" style="background-color: #fafafa;">
-
+ <div class="card hovercard">
+                <div class="cardheader">
+                </div></div>
 
  <div class="center-align"  style="font-family: 'Manuale', serif;" >
 
@@ -80,14 +82,15 @@
                       <br>
                        <div id="profilepic"><img style = " height : 150px; width:150px; border-radius: 50%; border: 1px solid #292c2f;" src="{{ flyer.creater.profile_pic.url }}"></div>
                         
-                       <div style="font-family: 'Manuale'; font-size: 1.4em; margin-top: 10px"> Created by - {{flyer.creater}}</div>
-<div style="font-family: 'Manuale'; font-size: 1em;"> Dated - {{flyer.date}}</div>
-<div style="font-family: 'Manuale'; font-size: 1em;" > At  - {{flyer.time}}</div>
+                       <div style="font-family: 'Manuale'; font-size: 1.4em; margin-top: 10px; color: #039be5"> Created by - {{flyer.creater}}</div>
+ <div style="font-family: 'Manuale'; font-size: 1em;color: #01579b "> Viewed  {{flyer.viewcount}} times.</div>
+<div style="font-family: 'Manuale'; font-size: 1em;color: #01579b "> Dated - {{flyer.date}}</div>
+<div style="font-family: 'Manuale'; font-size: 1em;color: #01579b " > Time  - {{flyer.time}}</div><br><br>
 <hr style="width:5%; border: 1px solid #ccc;"/>
-<div style="font-family: 'Manuale'; font-size: 1.3em;line-height: 30px" >  {{flyer.creater.bio}}</div>
+<div style="font-family: 'Manuale'; font-size: 1.3em;line-height: 30px;color: #263238 ; width: 85%;margin: auto" >  {{flyer.creater.bio}}</div>
 
                          <hr style="width:5%; border: 1px solid #ccc;"/> <br><br><hr>
-        <div class="col-md-12">  <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> {{flyer.title}}</p>  <hr style="width:5%; border: 1px solid #ccc;"/><div  class="center-align"  style="font-family: 'Manuale', serif; font-size: 1.2em;"  id="summary"></div><br>
+        <div class="col-md-12">  <div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238 "> {{flyer.title}} </div>  <hr style="width:5%; border: 1px solid #ccc;"/><div  class="center-align"  style="font-family: 'Manuale'; font-size: 1.3em;line-height: 30px;color: #263238 ; width: 85%;margin: auto"  id="summary"></div><br>
 
        </div>
 
@@ -121,17 +124,17 @@
 
         
           
-           
+          
  
            
          
-<p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> Description</p> <hr style="width:5%; border: 1px solid #ccc;"/>
-            <div id="Flyer-Description" style="font-family: 'Manuale', serif; text-align:justify;" >
+<div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> Description</div> <hr style="width:5%; border: 1px solid #ccc;"/>
+            <div id="Flyer-Description"  style="font-family: 'Manuale'; font-size: 1.3em;line-height: 30px;color: #263238 ; width: 92%;margin: auto; text-align:justify;"  >
                &nbsp &nbsp &nbsp  &nbsp  &nbsp  &nbsp{{flyer.description}}
             </div><hr>
 
             <div class="center-align">
-             <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> Photos</p> <hr style="width:5%; border: 1px solid #ccc;"/>  <br><br>
+             <div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> Photos</div> <hr style="width:5%; border: 1px solid #ccc;"/>  <br><br>
             </div>
 
             <div class="col m12 gallery">
@@ -164,7 +167,7 @@
                 <hr><br>
             </div>
             <div class="center-align">
-              <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> Videos</p> <hr style="width:5%; border: 1px solid #ccc;"/>
+              <div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> Videos</div> <hr style="width:5%; border: 1px solid #ccc;"/>
             </div><br><br>
 
             <div class="col m12 gallery center-align">
@@ -192,7 +195,7 @@
         <!-- close clo-md-12 -->
 
         <br>
-        <div class="center-align street"><p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> 360° Street View</p> <hr style="width:5%; border: 1px solid #ccc;"/></div>
+        <div class="center-align street"><div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> 360° Street View</div> <hr style="width:5%; border: 1px solid #ccc;"/></div>
 
 
         <div class="street" >
@@ -254,7 +257,7 @@
 
 
   <div class="col-md-12">
-            <p class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;"> Location on Map</p> <hr style="width:5%; border: 1px solid #ccc;"/>
+            <div class="center-align" id="Flyer-Title" style = "font-family: 'Playfair Display', serif;  text-transform: capitalize; font-size: 3em;color: #263238"> Location on Map</div> <hr style="width:5%; border: 1px solid #ccc;"/>
 
             <div id="mapp"></div>
            

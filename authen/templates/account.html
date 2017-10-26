@@ -14,6 +14,12 @@
 
 <link rel="stylesheet" href="{% static 'authen/css/style.css' %}">
 <link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
+ <style type="text/css">
+    #Public-Flyer{
+      width: 90% !important;
+      margin: auto;
+    }
+  </style>
 <div class="container" id="Public-Profile-Main-Container">
     <div>
         <div class="col-lg-12 col-sm-12">
@@ -33,7 +39,7 @@
                     </div>
                     <hr style="width:5%; border: 1px solid #ccc;" />
 
-                    <div style="font-family: 'Manuale'; font-size: 1.3em;padding: 10px; line-height: 30px" class="desc" id="Public-Flyer-Person-Description">
+                    <div style="font-family: 'Manuale'; font-size: 1.3em;padding: 10px; line-height: 30px" class="desc" id="Public-Flyer">
                         {{ profile.bio }}
                     </div>
 
@@ -55,11 +61,11 @@
         <div class="email"></div>
         <div class="photo"></div>
         <div class="bio"></div>
-        <div class="center-align text-center ">
-            <div class="row">
+        <div class="center-align text-center " style="margin-left: -5px">
+            <div class="row" >
 
-                <div class=" col s3"></div>
-                <form class="col s6" method="POST" action="/authen/myaccount/" enctype="multipart/form-data">
+                <div class=" col m3" ></div>
+                <form class="col s12 m6" method="POST" action="/authen/myaccount/" enctype="multipart/form-data">
                     {% csrf_token %}
 
                     <div class="row">

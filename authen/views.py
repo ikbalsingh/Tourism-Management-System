@@ -59,12 +59,12 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return HttpResponseRedirect('/dashboard/home')
+            return HttpResponseRedirect('/home/')
         else:
             return HttpResponse('You havent registered')
     else:
         if request.user.is_authenticated():
-            return HttpResponseRedirect('/dashboard')
+            return HttpResponseRedirect('/home/')
         else:
             return render(request, 'login.html', {"profile": None})
 

@@ -49,6 +49,8 @@ def location(request,p):
      print(data)
      photos = Photo.objects.filter(flyer = data)
      videos = Video.objects.filter(flyer = data)
+     data.viewcount=data.viewcount+1
+     data.save()
      pr = Profile.objects.get(user=request.user)
      print(photos)
      return render(request, 'location.html',{'profile': pr,'flyer':data ,'photos' : photos , 'videos' : videos})

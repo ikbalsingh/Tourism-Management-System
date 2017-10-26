@@ -31,16 +31,16 @@
                 {% else %}
                 <img width="400" height="250" src="">                
                 {% endif %}
-                <span class="card-title">{{p.user.username}}</span>
+                <span class="card-title" style="text-shadow: 1px 1px #000; font-size: 2em">{{p.user.username}}</span>
                 <a href="/friends/{{p.user.username}}/" class="btn-floating halfway-fab waves-effect waves-light red">
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                 </a>
             </div>
             <div class="card-content">
-                <p id="details" style="font-family: 'Manuale', serif; ">{{p.bio}}</p>
+                <p id="details" style="font-family: 'Manuale', serif; ">{{p.bio|slice:"0:150"}}...</p>
             </div>
             <div class="card-action">
-                <div style="font-family: 'Manuale', serif; text-align:justify;"> {{p.email}}</div>
+                <div style="font-family: 'Manuale', serif; text-align:justify;color: #1a237e""> {{p.email}}</div>
 
             </div>
         </div>
