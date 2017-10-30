@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['*']
 
 
 
+
 SUPER_USERNAME = "ikbalsingh"
 SUPER_PASSWORD = "pass@123"
 
