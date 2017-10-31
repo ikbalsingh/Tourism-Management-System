@@ -33,6 +33,7 @@ urlpatterns = [
     url(r'^about/', views.about),
     url(r'^friends/(?P<p>[\w]+)', views.friendprofile),
     url(r'^friends/', views.friends),
+     url(r'^leaderboard/', views.leaderboard),
 
    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
