@@ -1,0 +1,195 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+0001_initial.py	../explore/migrations/0001_initial.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	../TMS/settings.py	/^ALLOWED_HOSTS = ['*']$/;"	kind:variable	line:33
+AUTH_PASSWORD_VALIDATORS	../TMS/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:100
+AppConfig	../authen/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+AppConfig	../chatroom/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+AppConfig	../explore/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+AuthConfig	../authen/apps.py	/^class AuthConfig(AppConfig):$/;"	kind:class	line:4
+BASE_DIR	../TMS/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:19
+ChatroomConfig	../chatroom/apps.py	/^class ChatroomConfig(AppConfig):$/;"	kind:class	line:4
+DATABASES	../TMS/settings.py	/^DATABASES = {$/;"	kind:variable	line:89
+DEBUG	../TMS/settings.py	/^DEBUG = True$/;"	kind:variable	line:31
+ExploreConfig	../explore/apps.py	/^class ExploreConfig(AppConfig):$/;"	kind:class	line:4
+Flyer	../explore/models.py	/^class Flyer(models.Model):$/;"	kind:class	line:6
+HttpResponse	../TMS/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:2
+HttpResponse	../authen/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:5
+HttpResponse	../explore/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:2
+HttpResponseRedirect	../TMS/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:2
+HttpResponseRedirect	../authen/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:5
+HttpResponseRedirect	../explore/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:2
+INSTALLED_APPS	../TMS/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:43
+Image	../explore/views.py	/^from PIL import Image$/;"	kind:namespace	line:5
+JsonResponse	../TMS/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:2
+JsonResponse	../authen/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:5
+JsonResponse	../explore/views.py	/^from django.http import HttpResponse, JsonResponse, HttpResponseRedirect$/;"	kind:namespace	line:2
+LANGUAGE_CODE	../TMS/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:119
+MEDIA_ROOT	../TMS/settings.py	/^MEDIA_ROOT = os.path.join(BASE_DIR, 'media\/')$/;"	kind:variable	line:135
+MEDIA_URL	../TMS/settings.py	/^MEDIA_URL = '\/media\/'$/;"	kind:variable	line:136
+MIDDLEWARE	../TMS/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:55
+Migration	../explore/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
+Photo	../explore/models.py	/^class Photo(models.Model):$/;"	kind:class	line:21
+Profile	../authen/models.py	/^class Profile(models.Model):$/;"	kind:class	line:5
+Profile	../authen/views.py	/^from .models import Profile$/;"	kind:namespace	line:8
+Profile	../explore/models.py	/^from authen.models import Profile$/;"	kind:namespace	line:2
+ROOT_URLCONF	../TMS/settings.py	/^ROOT_URLCONF = 'TMS.urls'$/;"	kind:variable	line:65
+STATIC_ROOT	../TMS/settings.py	/^STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")$/;"	kind:variable	line:134
+STATIC_URL	../TMS/settings.py	/^STATIC_URL = '\/static\/'$/;"	kind:variable	line:133
+SUPER_PASSWORD	../TMS/settings.py	/^SUPER_PASSWORD = "pass@123"$/;"	kind:variable	line:39
+SUPER_USERNAME	../TMS/settings.py	/^SUPER_USERNAME = "ikbalsingh"$/;"	kind:variable	line:38
+TEMPLATES	../TMS/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:67
+TIME_ZONE	../TMS/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:121
+TestCase	../authen/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+TestCase	../chatroom/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+TestCase	../explore/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+USE_I18N	../TMS/settings.py	/^USE_I18N = True$/;"	kind:variable	line:123
+USE_L10N	../TMS/settings.py	/^USE_L10N = True$/;"	kind:variable	line:125
+USE_TZ	../TMS/settings.py	/^USE_TZ = True$/;"	kind:variable	line:127
+User	../authen/models.py	/^from django.contrib.auth.models import User$/;"	kind:namespace	line:2
+User	../authen/views.py	/^from django.contrib.auth.models import User$/;"	kind:namespace	line:6
+Video	../explore/models.py	/^class Video(models.Model):$/;"	kind:class	line:31
+WSGI_APPLICATION	../TMS/settings.py	/^WSGI_APPLICATION = 'TMS.wsgi.application'$/;"	kind:variable	line:83
+__init__.py	../TMS/__init__.py	1;"	kind:file	line:1
+__init__.py	../authen/__init__.py	1;"	kind:file	line:1
+__init__.py	../chatroom/__init__.py	1;"	kind:file	line:1
+__init__.py	../explore/__init__.py	1;"	kind:file	line:1
+__init__.py	../explore/migrations/__init__.py	1;"	kind:file	line:1
+__str__	../authen/models.py	/^    def __str__(self):$/;"	kind:member	line:15
+__str__	../explore/models.py	/^	def __str__(self):$/;"	kind:member	line:26
+__str__	../explore/models.py	/^	def __str__(self):$/;"	kind:member	line:36
+__str__	../explore/models.py	/^    def __str__(self):$/;"	kind:member	line:14
+about	../TMS/views.py	/^def about(request):$/;"	kind:function	line:14
+admin	../TMS/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:18
+admin	../authen/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	../chatroom/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	../chatroom/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:4
+admin	../explore/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin.py	../authen/admin.py	1;"	kind:file	line:1
+admin.py	../chatroom/admin.py	1;"	kind:file	line:1
+admin.py	../explore/admin.py	1;"	kind:file	line:1
+application	../TMS/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	../authen/apps.py	1;"	kind:file	line:1
+apps.py	../chatroom/apps.py	1;"	kind:file	line:1
+apps.py	../explore/apps.py	1;"	kind:file	line:1
+auth_login	../authen/views.py	/^from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout$/;"	kind:namespace	line:7
+auth_logout	../authen/views.py	/^from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout$/;"	kind:namespace	line:7
+authenticate	../authen/views.py	/^from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout$/;"	kind:namespace	line:7
+bio	../authen/models.py	/^    bio = models.CharField(max_length=500, blank=True, null=True)$/;"	kind:variable	line:8
+chat	../chatroom/views.py	/^def chat(request):$/;"	kind:function	line:4
+confirmhash	../authen/models.py	/^    confirmhash = models.CharField(max_length=100, blank=True, null=True)$/;"	kind:variable	line:11
+creater	../explore/models.py	/^    creater = models.ForeignKey(Profile)$/;"	kind:variable	line:7
+dashboard_home	../explore/views.py	/^def dashboard_home(request):$/;"	kind:function	line:10
+date	../explore/models.py	/^    date = models.CharField(max_length=500, blank=True, null=True)$/;"	kind:variable	line:11
+datetime	../authen/views.py	/^import datetime$/;"	kind:namespace	line:10
+db	../explore/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+deletion	../explore/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+dependencies	../explore/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:13
+description	../explore/models.py	/^    description = models.CharField(max_length=500, blank=True, null=True)$/;"	kind:variable	line:9
+django	../explore/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+django	../manage.py	/^            import django$/;"	kind:namespace	line:14
+email	../authen/models.py	/^    email = models.EmailField(unique=True)$/;"	kind:variable	line:7
+execute_from_command_line	../manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
+faq	../TMS/views.py	/^def faq(request):$/;"	kind:function	line:21
+fields	../explore/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:20
+fields	../explore/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:33
+fields	../explore/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:42
+flyer	../explore/models.py	/^	flyer = models.ForeignKey('Flyer',related_name='images')$/;"	kind:variable	line:23
+flyer	../explore/models.py	/^	flyer = models.ForeignKey(Flyer)$/;"	kind:variable	line:33
+forgotpassword	../authen/views.py	/^def forgotpassword(request):$/;"	kind:function	line:80
+friendprofile	../TMS/views.py	/^def friendprofile(request, p):$/;"	kind:function	line:35
+friends	../TMS/views.py	/^def friends(request):$/;"	kind:function	line:28
+get_wsgi_application	../TMS/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
+hashlib	../authen/models.py	/^import hashlib$/;"	kind:namespace	line:3
+hashlib	../authen/views.py	/^import hashlib$/;"	kind:namespace	line:9
+home	../TMS/views.py	/^def home(request):$/;"	kind:function	line:7
+include	../TMS/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:17
+include	../chatroom/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:3
+include	../explore/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:17
+initial	../explore/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:11
+location	../explore/models.py	/^    location = models.CharField(max_length=500, blank=True, null=True)$/;"	kind:variable	line:10
+location	../explore/views.py	/^def location(request,p):$/;"	kind:function	line:52
+login	../authen/views.py	/^def login(request):$/;"	kind:function	line:55
+logout	../authen/views.py	/^def logout(request):$/;"	kind:function	line:72
+manage.py	../manage.py	1;"	kind:file	line:1
+migrations	../explore/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+mimetypes	../TMS/settings.py	/^import mimetypes$/;"	kind:namespace	line:15
+models	../authen/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models	../chatroom/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models	../explore/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	../explore/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+models	../explore/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models.py	../authen/models.py	1;"	kind:file	line:1
+models.py	../chatroom/models.py	1;"	kind:file	line:1
+models.py	../explore/models.py	1;"	kind:file	line:1
+myaccount	../authen/views.py	/^def myaccount(request):$/;"	kind:function	line:178
+name	../authen/apps.py	/^    name = 'authen'$/;"	kind:variable	line:5
+name	../chatroom/apps.py	/^    name = 'chatroom'$/;"	kind:variable	line:5
+name	../explore/apps.py	/^    name = 'explore'$/;"	kind:variable	line:5
+name	../explore/migrations/0001_initial.py	/^            name='Flyer',$/;"	kind:variable	line:19
+name	../explore/migrations/0001_initial.py	/^            name='Photo',$/;"	kind:variable	line:32
+name	../explore/migrations/0001_initial.py	/^            name='Video',$/;"	kind:variable	line:41
+operations	../explore/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:17
+os	../TMS/settings.py	/^import os$/;"	kind:namespace	line:13
+os	../TMS/wsgi.py	/^import os$/;"	kind:namespace	line:10
+os	../manage.py	/^import os$/;"	kind:namespace	line:2
+photo	../explore/models.py	/^	photo = models.ImageField(upload_to = 'flyerphotos',blank=True, null=True)$/;"	kind:variable	line:24
+place	../explore/views.py	/^def place(request, p):$/;"	kind:function	line:19
+profile_pic	../authen/models.py	/^    profile_pic = models.ImageField($/;"	kind:variable	line:9
+redirect	../TMS/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+redirect	../authen/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:4
+redirect	../chatroom/views.py	/^from django.shortcuts import render,redirect$/;"	kind:namespace	line:1
+redirect	../explore/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+register	../authen/views.py	/^def register(request):$/;"	kind:function	line:18
+render	../TMS/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+render	../authen/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:4
+render	../chatroom/views.py	/^from django.shortcuts import render,redirect$/;"	kind:namespace	line:1
+render	../explore/views.py	/^from django.shortcuts import render, redirect$/;"	kind:namespace	line:1
+resetpassword	../authen/views.py	/^def resetpassword(request, p):$/;"	kind:function	line:133
+settings	../TMS/urls.py	/^from . import settings,views$/;"	kind:namespace	line:21
+settings	../TMS/urls.py	/^from django.conf import settings$/;"	kind:namespace	line:16
+settings	../chatroom/urls.py	/^from django.conf import settings$/;"	kind:namespace	line:1
+settings	../explore/urls.py	/^from django.conf import settings$/;"	kind:namespace	line:16
+settings.py	../TMS/settings.py	1;"	kind:file	line:1
+smtplib	../authen/views.py	/^import smtplib$/;"	kind:namespace	line:11
+static	../TMS/urls.py	/^from django.conf.urls.static import static$/;"	kind:namespace	line:20
+static	../chatroom/urls.py	/^from django.conf.urls.static import static$/;"	kind:namespace	line:2
+sys	../manage.py	/^import sys$/;"	kind:namespace	line:3
+tests.py	../authen/tests.py	1;"	kind:file	line:1
+tests.py	../chatroom/tests.py	1;"	kind:file	line:1
+tests.py	../explore/tests.py	1;"	kind:file	line:1
+time	../explore/models.py	/^    time = models.CharField(max_length=500, blank=True, null=True)$/;"	kind:variable	line:12
+title	../explore/models.py	/^    title = models.CharField(max_length=100, blank=True, null=True)$/;"	kind:variable	line:8
+unicode_literals	../authen/views.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:2
+unicode_literals	../explore/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+url	../TMS/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:17
+url	../authen/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+url	../chatroom/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:3
+url	../explore/urls.py	/^from django.conf.urls import url, include$/;"	kind:namespace	line:17
+urlpatterns	../TMS/urls.py	/^urlpatterns = [$/;"	kind:variable	line:25
+urlpatterns	../authen/urls.py	/^urlpatterns = [$/;"	kind:variable	line:4
+urlpatterns	../chatroom/urls.py	/^urlpatterns = [$/;"	kind:variable	line:9
+urlpatterns	../explore/urls.py	/^urlpatterns = [$/;"	kind:variable	line:21
+urls.py	../TMS/urls.py	1;"	kind:file	line:1
+urls.py	../authen/urls.py	1;"	kind:file	line:1
+urls.py	../chatroom/urls.py	1;"	kind:file	line:1
+urls.py	../explore/urls.py	1;"	kind:file	line:1
+user	../authen/models.py	/^    user = models.OneToOneField(User, on_delete=models.CASCADE)$/;"	kind:variable	line:6
+user	../explore/models.py	/^	user = models.ForeignKey(Profile)$/;"	kind:variable	line:22
+user	../explore/models.py	/^	user = models.ForeignKey(Profile)$/;"	kind:variable	line:32
+video	../explore/models.py	/^	video = models.FileField(upload_to = 'flyervideos' , blank=True, null=True)$/;"	kind:variable	line:34
+viewcount	../explore/models.py	/^    viewcount = models.IntegerField(default=0)$/;"	kind:variable	line:13
+viewprofile	../authen/views.py	/^def viewprofile(request, p=None):$/;"	kind:function	line:162
+views	../TMS/urls.py	/^from . import settings,views$/;"	kind:namespace	line:21
+views	../authen/urls.py	/^from . import views$/;"	kind:namespace	line:2
+views	../chatroom/urls.py	/^from . import views$/;"	kind:namespace	line:5
+views	../explore/urls.py	/^from . import views$/;"	kind:namespace	line:18
+views.py	../TMS/views.py	1;"	kind:file	line:1
+views.py	../authen/views.py	1;"	kind:file	line:1
+views.py	../chatroom/views.py	1;"	kind:file	line:1
+views.py	../explore/views.py	1;"	kind:file	line:1
+wsgi.py	../TMS/wsgi.py	1;"	kind:file	line:1
