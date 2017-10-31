@@ -82,121 +82,79 @@
     <nav class="nav-extended">
         <div class="nav-wrapper blue-grey darken-3">
             <div class="container">
-                <a href="/home/" class="brand-logo">
-                    <i class="large material-icons">landscape</i>
-                    <span id="logo1">Travel</span>
-                    <span id="logo2">Book</span>
-                </a>
 
+                <a href="/home/" class="brand-logo"><i class="large material-icons">landscape</i><span id="logo1">Travel</span><span id="logo2">Book</span></a>
+               
                 <ul class="right hide-on-med-and-down">
-                    {% if profile %}
-                    <li>
-                        <a href="/dashboard/home/">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/friends/">Friends</a>
-                    </li>
-                    {% endif %}
-                    <li>
-                        <a href="/home/">Home</a>
-                    </li>
+                     {% if profile  %}
+                     <li><a href="/dashboard/home/">Dashboard</a></li>
+                      <li><a href="/friends/">Bloggers</a></li>
+                      <li><a href="/leaderboard/">Leaderboard</a></li>
+                      {% endif %}
+                   
+                   
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/faq/">FAQ</a></li>
+                    {% if profile  %}
+                    
+                        {% if profile.profile_pic %}
+                      
 
-                    <li>
-                        <a href="/about/">About Us</a>
-                    </li>
-                    <li>
-                        <a href="/faq/">FAQ</a>
-                    </li>
-                    {% if profile %} {% if profile.profile_pic %}
-
-                    <li id="profilepic">
-                        <a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true">
-                            <img style=" height : 30px; margin-bottom: -10px;" src="{{ profile.profile_pic.url }}">
-                            <i class="material-icons right">arrow_drop_down</i>
-                        </a>
-                    </li>
-                    {% endif %} {% else %}
-                    <li>
-                        <a href="/authen/login/">Log In</a>
-                    </li>
-                    <li>
-                        <a href="/authen/register/">Sign Up</a>
-                    </li>
+                        <li id="profilepic"><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true"><img style = " height : 30px; margin-bottom: -10px;" src="{{ profile.profile_pic.url }}"><i class="material-icons right">arrow_drop_down</i></a></li>
+                        {% endif %}
+                                
+                    {% else %}
+                        <li><a href="/authen/login/">Log In</a></li>
+                        <li><a href="/authen/register/">Sign Up</a></li>
                     {% endif %}
                 </ul>
 
-                <ul id="slide-out" class="side-nav">
-                    <li>
-                        <div class="user-view">
-                            <div class="background">
-                                <img src="https://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg">
-                            </div>
-                            {% if profile %} {% if profile.profile_pic %}
-                            <a href="#!user">
-                                <img class="circle" src="{{ profile.profile_pic.url }}">
-                            </a>
-                            <a href="#!name">
-                                <span class="white-text name">{{profile.user.username}}</span>
-                            </a>
-                            <a href="#!email">
-                                <span class="white-text email">{{profile.email}}</span>
-                            </a>
-                        </div>
-                    </li>
+               <ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="https://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg">
+      </div>
+       {% if profile  %}
+                    
+         {% if profile.profile_pic %}
+      <a href="#!user"><img class="circle" src="{{ profile.profile_pic.url }}"></a>
+      <a href="#!name"><span class="white-text name">{{profile.user.username}}</span></a>
+      <a href="#!email"><span class="white-text email">{{profile.email}}</span></a>
+    </div></li>  
+        
 
-                    <li>
-                        <a class="waves-effect" href="/authen/viewprofile/">My Profile</a>
-                    </li>
-                    <li>
-                        <a href="/authen/myaccount/">My Account</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect" href="/dashboard/home/">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="/friends/">Friends</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect" href="/home/">Home</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect" href="/about/">About us</a>
-                    </li>
-                    <li>
-                        <a class="waves-effect" href="/faq/">FAQ</a>
-                    </li>
+        
+        
+    <li><a class="waves-effect"  href="/authen/viewprofile/">My Profile</a></li>
+     <li><a href="/authen/myaccount/">My Account</a></li>  
+       <li><a class="waves-effect"  href="/dashboard/home/">Dashboard</a></li>
+        <li><a href="/friends/">Bloggers</a></li>
+                      <li><a href="/leaderboard/">Leaderboard</a></li>
+    <li><a  class="waves-effect" href="/home/">Home</a></li>
+    <li><a class="waves-effect"  href="/about/">About us</a></li>
+    <li><a class="waves-effect"  href="/faq/">FAQ</a></li>
+    
+   
+    
+    <li><a class="waves-effect" href="/authen/logout/">Logout</a></li>
+          {% endif %}
+      
 
-                    <li>
-                        <a class="waves-effect" href="/authen/logout/">Logout</a>
-                    </li>
-                    {% endif %} {% else %}
-                    <a href="#">
-                        <span class="white-text email">Not logged in</span>
-                    </a>
-            </div>
-            </li>
-            <li>
-                <a class="waves-effect" href="/home/">Home</a>
-            </li>
-            <li>
-                <a class="waves-effect" href="/about/">About us</a>
-            </li>
-            <li>
-                <a class="waves-effect" href="/faq/">FAQ</a>
-            </li>
-            <li>
-                <a class="waves-effect" href="/authen/login/">Login</a>
-            </li>
-            <li>
-                <a class="waves-effect" href="/authen/register/">Sign up</a>
-            </li>
+       {% else %}
+       <a href="#"><span class="white-text email">Not logged in</span></a>
+    </div></li> 
+<li><a  class="waves-effect" href="/home/">Home</a></li>
+<li><a class="waves-effect"  href="/about/">About us</a></li>
+ <li><a class="waves-effect"  href="/faq/">FAQ</a></li>
+    <li><a  class="waves-effect" href="/authen/login/">Login</a></li>
+<li><a  class="waves-effect" href="/authen/register/">Sign up</a></li>
+    
+   
+       {% endif %}
+  </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>      </div>
 
-            {% endif %}
-            </ul>
-            <a href="#" data-activates="slide-out" class="button-collapse">
-                <i class="material-icons">menu</i>
-            </a>
-        </div>
+              
         </div>
 
     </nav>
@@ -239,7 +197,11 @@
                 <a href="/home/">Home</a> ·
                 <a href="/about/">About</a> ·
                 <a href="/faq/">FAQ</a> ·
+
+                <a href="/about/">Contact</a>
+
                 <!--<a href="#">Contact</a>-->
+
             </p>
 
             <p class="footer-company-name">Origin Incorporated &copy; 2017</p>

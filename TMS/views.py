@@ -41,6 +41,12 @@ def friendprofile(request, p):
         videos = Video.objects.filter(user = pr)
         print(photos)
         return render(request, 'profile.html', {"profile": pr, "flyers" : fly, "photos" : photos, "videos" : videos})
+
+def leaderboard(request):
+      if request.user.is_authenticated():
+        pr = Profile.objects.get(user=request.user)
+        fly = Flyer.objects.all()
+        return render(request, 'leaderboard.html', {'profile': pr, 'list':fly})
    
 
 
