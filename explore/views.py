@@ -16,6 +16,8 @@ def dashboard_home(request):
         return redirect('/authen/login/')
 
 
+
+
 def place(request, p):
     if request.user.is_authenticated():
         title = request.POST['title']
