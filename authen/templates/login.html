@@ -1,28 +1,25 @@
 {% extends 'navbar.html' %}
 {% load static %}
-
 {% block content %}
+
 <body style="background : #717e86">
 
-  <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-  <!--Import materialize.css-->
- 
   <link rel="stylesheet" href="{% static 'authen/css/style.css' %}">
-  <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="{% static 'authen/css/font-awesome.min.css' %}">
-
   <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
-
   <link rel="stylesheet" href="{% static 'authen/css/footer-distributed-with-address-and-phones.css' %}">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-
   <link rel="stylesheet" href="{%  static 'authen/css/signup.css' %}">
+  <style type="text/css">
+    .footer-distributed  {
+  position:fixed;
+  bottom:0;
+}
+</style>
 <br><br>
-
-
 
   <div class="custom-container" style="margin-top : 20px">
     <div class="card" style="margin : -20px 0"></div>
@@ -41,14 +38,15 @@
           <div class="bar"></div>
         </div>
         <div class="button-container">
-          <button><span>Go</span></button>
-        </div>
-        <div class="footer"><a href="/authen/forgotpassword/">Forgot your password?</a></div>
+          <button class="btn btn-large waves-effect waves-light indigo" type="submit" name="action">Login
+    <i class="material-icons right">send</i>
+  </button>
+        </div><br>
+        <div class="last center-align"><a href="/authen/forgotpassword/">Forgot your password?</a></div>
       </form>
     </div>
-
   </div>
-
+  
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="{% static 'authen/js/materialize.min.js' %}"></script>
   <script src="{% static 'authen/js/signup.js' %}"></script>

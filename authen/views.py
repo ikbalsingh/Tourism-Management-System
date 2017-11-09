@@ -59,12 +59,12 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             auth_login(request, user)
-            return HttpResponseRedirect('/dashboard/home')
+            return HttpResponseRedirect('/home/')
         else:
             return HttpResponse('You havent registered')
     else:
         if request.user.is_authenticated():
-            return HttpResponseRedirect('/dashboard')
+            return HttpResponseRedirect('/home/')
         else:
             return render(request, 'login.html', {"profile": None})
 
@@ -97,8 +97,8 @@ def forgotpassword(request):
                 scheme, domain, tp)
 
             # Gmail Sign In
-            gmail_sender = "thecoders000@gmail.com"
-            gmail_passwd = "12345ikbal"
+            gmail_sender = "travelbook1218@gmail.com"
+            gmail_passwd = "travel@786"
 
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.ehlo()
@@ -176,7 +176,6 @@ def viewprofile(request, p=None):
 
 
 def myaccount(request):
-    # upar wale viewprofile ka same copy kia hai
     if request.user.is_authenticated():
         pr = Profile.objects.get(user=request.user)
         if request.method == 'POST':

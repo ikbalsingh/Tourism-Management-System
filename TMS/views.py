@@ -8,11 +8,22 @@ def home(request):
      if request.user.is_authenticated():
         pr = Profile.objects.get(user=request.user)
         return render(request, 'index.html', {'profile': pr})
+     else:
+        return render(request, 'index.html')
 
 def about(request):
      if request.user.is_authenticated():
         pr = Profile.objects.get(user=request.user)
         return render(request, 'about-us.html', {'profile': pr})
+     else:
+        return render(request,'about-us.html')
+
+def faq(request):
+     if request.user.is_authenticated():
+        pr = Profile.objects.get(user=request.user)
+        return render(request, 'faq.html', {'profile': pr})
+     else:
+        return render(request, 'faq.html')
 
 def friends(request):
      if request.user.is_authenticated():
@@ -30,6 +41,12 @@ def friendprofile(request, p):
         videos = Video.objects.filter(user = pr)
         print(photos)
         return render(request, 'profile.html', {"profile": pr, "flyers" : fly, "photos" : photos, "videos" : videos})
+
+def leaderboard(request):
+      if request.user.is_authenticated():
+        pr = Profile.objects.get(user=request.user)
+        fly = Flyer.objects.all()
+        return render(request, 'leaderboard.html', {'profile': pr, 'list':fly})
    
 
 

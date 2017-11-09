@@ -89,20 +89,7 @@ $(document).ready(function() {
 /**
  * Shows a hover effect on thumb liked and thumb like incTravel Flyer show blade.
  */
-$('#thumbs-popup')
-    .popup({
-        popup : $('#popup2'),
-        on    : 'hover',
-        hoverable: true
-    });
 
-
-$('#thumbs-like-popup')
-    .popup({
-        popup : $('#popup1'),
-        on    : 'hover',
-        hoverable: true
-    });
 
 
 /**
