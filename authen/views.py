@@ -97,8 +97,8 @@ def forgotpassword(request):
                 scheme, domain, tp)
 
             # Gmail Sign In
-            gmail_sender = "travelbook1218@gmail.com"
-            gmail_passwd = "travel@786"
+            gmail_sender = "*"
+            gmail_passwd = "*"
 
             server = smtplib.SMTP('smtp.gmail.com', 587)
             server.ehlo()
